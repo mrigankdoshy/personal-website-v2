@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img alt="Logo" src="https://user-images.githubusercontent.com/32623983/170842452-2ea3a2f8-2164-421e-8788-d52c878a1a07.png" width="100" />
+</div>
+<h1 align="center">
+  <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>
+</h1>
+<p align="center">
+  v2 of a personal portfolio website built using <a href="https://react.dev" target="_blank">React</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
+</p>
+<p align="center">
+  <img src="https://deploy-badge.vercel.app/vercel/personal-website-v2?style=for-the-badge" />
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
+  </a>
+  <img src="https://img.shields.io/github/v/release/mrigankdoshy/personal-website-v2?color=blue&include_prereleases&sort=date&style=for-the-badge" alt="Release">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Building and Running
 
-Currently, two official plugins are available:
+TBD
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚠️ Disclaimer
 
-## Expanding the ESLint configuration
+Feel free to fork this repository and use parts of the code for your own website. However, I encourage you to use this as a learning tool and ask that you modify the theme and widgets to make it your own, and have fun with React!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I've spent a non-trivial amount of effort building and redesigning this iteration of my website. If you decide to make use of this project, I'd appreciate being credited as the developer (by linking back to <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>).
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+And obviously, I do not give permission to present any of my information or projects as your own.
