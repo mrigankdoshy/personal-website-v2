@@ -1,20 +1,23 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+  recommendedConfig: eslint.configs.recommended,
+  allConfig: eslint.configs.all,
+});
+
 export default tseslint.config(
+  eslint.configs.recommended,
+  eslintConfigPrettier,
+  ...tseslint.configs.recommended,
+  ...compat.config({
+    extends: ['next'],
+  }),
   {
-    ignores: ['node_modules', 'dist'],
-  },
-  {
-    extends: [
-      eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      eslintConfigPrettier,
-    ],
+    ignores: ['node_modules'],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2024,
@@ -24,13 +27,8 @@ export default tseslint.config(
         JSX: true,
       },
     },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
+    plugins: {},
     rules: {
-      ...reactHooks.configs.recommended.rules,
       'no-console': 'warn',
       'react/jsx-curly-brace-presence': [
         'warn',
@@ -38,10 +36,6 @@ export default tseslint.config(
           props: 'never',
           children: 'never',
         },
-      ],
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
       ],
       'sort-imports': [
         'error',

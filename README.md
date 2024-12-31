@@ -5,7 +5,7 @@
   <a href="https://mrigankdoshy.com" target="_blank">mrigankdoshy.com</a>
 </h1>
 <p align="center">
-  v2 of a personal portfolio website built using <a href="https://react.dev" target="_blank">React</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
+  v2 of a personal portfolio website built using <a href="https://nextjs.org" target="_blank">Next.js</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>
 </p>
 <p align="center">
   <img src="https://deploy-badge.vercel.app/vercel/personal-website-v2?style=for-the-badge" />
