@@ -31,15 +31,17 @@ export function Navigation() {
             <Link
               key={link.path}
               href={link.path}
-              className={`${
-                pathname === link.path ? 'text-primary' : 'text-secondary'
-              } relative rounded-lg px-3 py-1.5 text-sm transition-colors`}
+              className={`relative rounded-lg px-3 py-1.5 text-sm transition-colors ${
+                pathname === link.path
+                  ? 'text-foreground'
+                  : 'text-muted-foreground'
+              }`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               {pathname === link.path && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 -z-10 rounded-lg bg-tertiary"
+                  className="absolute inset-0 -z-10 rounded-lg bg-accent"
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 />
               )}
