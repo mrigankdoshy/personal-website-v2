@@ -133,7 +133,11 @@ input:-webkit-autofill:focus {
   }
 }
 
-.animate-in {
+.animate-fade-in {
+  animation-delay: calc(var(--index) * 130ms);
+}
+
+.animate-fade-up {
   animation-delay: calc(var(--index) * 130ms);
 }
 

@@ -64,30 +64,10 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
-        in: {
-          '0%': {
-            transform: 'translateY(18px)',
-            opacity: '0',
-          },
-          '100%': {
-            transform: 'translateY(0)',
-            opacity: '1',
-          },
-        },
-        'in-reverse': {
-          '0%': {
-            transform: 'translateY(-18px)',
-            opacity: '0',
-          },
-          '100%': {
-            transform: 'translateY(0px)',
-            opacity: '1',
-          },
-        },
         'fade-in': {
           from: {
             opacity: '0',
-            transform: 'translateY(-10px)',
+            transform: 'translateY(-18px)',
           },
           to: {
             opacity: '1',
@@ -97,7 +77,7 @@ export default {
         'fade-up': {
           from: {
             opacity: '0',
-            transform: 'translateY(20px)',
+            transform: 'translateY(36px)',
           },
           to: {
             opacity: '1',
@@ -106,10 +86,8 @@ export default {
         },
       },
       animation: {
-        in: 'in .6s both',
-        'in-reverse': 'in-reverse .6s both',
-        'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
-        'fade-up': 'fade-up 1000ms var(--animation-delay, 0ms) ease forwards',
+        'fade-in': 'fade-in 0.6s both',
+        'fade-up': 'fade-up 0.6s both',
       },
     },
   },
