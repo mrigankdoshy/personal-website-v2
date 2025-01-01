@@ -17,10 +17,10 @@ export async function Home() {
               Mrigank Doshy.
             </h1>
             <h1
-              className="animate-fade-in text-2xl font-semibold tracking-tight text-foreground"
+              className="animate-fade-in text-2xl font-semibold tracking-tight text-secondary-foreground"
               style={{ '--index': 2 } as CSSProperties}
             >
-              I build mobile and web apps.
+              I build intuitive mobile and web apps.
             </h1>
           </div>
           <p
