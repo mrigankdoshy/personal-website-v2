@@ -1,28 +1,39 @@
 'use client';
 
 import { GlowEffect } from '@/shared/ui/glow-effect';
-import clsx from 'clsx';
+import { cn } from '@/shared/utils/cn';
 import { motion } from 'framer-motion';
 import localFont from 'next/font/local';
 import Image, { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 const ticketingFont = localFont({
   src: '../../../public/fonts/ticketing.woff2',
   display: 'swap',
 });
 
-export type PictureProps = Readonly<{
+const className = 'absolute h-full w-full rounded-xl overflow-hidden';
+
+const getFilename = (
+  src: StaticImageData | string,
+  filename?: string
+): string =>
+  filename ||
+  (typeof src !== 'string'
+    ? `${src.src.split('/').pop()?.split('.')[0] || ''}.jpg`
+    : '');
+
+type PictureProps = Readonly<{
   src: StaticImageData | string;
-  meta?: ReactNode;
-  filename?: string;
   alt: string;
   width: number;
   height: number;
   rotate: number;
   left: number;
   index: number;
+  filename?: string;
   flipDirection?: 'left' | 'right';
+  meta?: ReactNode;
   children?: ReactNode;
 }>;
 
@@ -39,17 +50,17 @@ export function Picture({
   meta,
   children,
 }: PictureProps) {
-  const className = 'absolute h-full w-full rounded-xl overflow-hidden';
-
-  const fileName =
-    filename ||
-    (typeof src !== 'string' &&
-      `${src.src.split('/').at(-1)?.split('.')[0]}.jpg`);
+  const fileName = useMemo(() => getFilename(src, filename), [filename, src]);
 
   return (
     <motion.div
+      drag
       className="absolute mx-auto cursor-grab hover:before:absolute hover:before:-left-7 hover:before:-top-8 hover:before:block hover:before:h-[300px] hover:before:w-[calc(100%+55px)]"
       style={{ rotate: `${rotate}deg`, left, width, height, perspective: 1000 }}
+      animate={{ width, height, rotate, y: 0, opacity: 1, x: 0 }}
+      whileTap={{ scale: 1.1, cursor: 'grabbing' }}
+      whileDrag={{ scale: 1.1, cursor: 'grabbing' }}
+      whileHover="flipped"
       initial={{
         width,
         height,
@@ -73,11 +84,6 @@ export function Picture({
         },
         scale: { duration: 0.12 },
       }}
-      animate={{ width, height, rotate, y: 0, opacity: 1, x: 0 }}
-      drag
-      whileTap={{ scale: 1.1, cursor: 'grabbing' }}
-      whileDrag={{ scale: 1.1, cursor: 'grabbing' }}
-      whileHover="flipped"
     >
       <motion.div
         className="relative h-full w-full rounded-xl shadow-md will-change-transform"
@@ -91,43 +97,61 @@ export function Picture({
           },
         }}
       >
-        <div className={className} style={{ backfaceVisibility: 'hidden' }}>
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-neutral-400 object-cover"
-            priority
-          />
+        <FrontSide src={src} alt={alt} width={width} height={height}>
           {children}
-        </div>
-        <div
-          className={clsx(
-            className,
-            'flex items-center overflow-hidden rounded-xl bg-[#FFFAF2]'
-          )}
-          style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
-          }}
-        >
-          <GlowEffect intensity={50} className="flex items-center">
-            <span className="absolute h-[500px] w-[500px] rotate-[-20deg] bg-[url('/images/photo-paper.png')] bg-[length:280px] bg-repeat" />
-            <div className="z-[1] px-6">
-              <div
-                className={clsx(
-                  ticketingFont.className,
-                  'flex flex-col gap-1 uppercase'
-                )}
-              >
-                <p className="text-secondary">{fileName}</p>
-                {meta && <p className="text-sm text-secondary">{meta}</p>}
-              </div>
-            </div>
-          </GlowEffect>
-        </div>
+        </FrontSide>
+        <BackSide filename={fileName} meta={meta} />
       </motion.div>
     </motion.div>
+  );
+}
+
+type FrontSideProps = Pick<
+  PictureProps,
+  'src' | 'alt' | 'width' | 'height' | 'children'
+>;
+
+function FrontSide({ src, alt, width, height, children }: FrontSideProps) {
+  return (
+    <div className={className} style={{ backfaceVisibility: 'hidden' }}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-neutral-400 object-cover"
+        priority
+      />
+      {children}
+    </div>
+  );
+}
+
+type BackSideProps = Pick<PictureProps, 'filename' | 'meta'>;
+
+function BackSide({ filename, meta }: BackSideProps) {
+  return (
+    <div
+      className={cn(
+        className,
+        'flex items-center overflow-hidden rounded-xl bg-[#FFFAF2]'
+      )}
+      style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+    >
+      <GlowEffect intensity={50} className="flex items-center">
+        <span className="absolute h-[500px] w-[500px] rotate-[-20deg] bg-[url('/images/photo-paper.png')] bg-[length:280px] bg-repeat" />
+        <div className="z-[1] px-6">
+          <div
+            className={cn(
+              ticketingFont.className,
+              'flex flex-col gap-1 uppercase'
+            )}
+          >
+            <p className="text-secondary">{filename}</p>
+            {meta && <p className="text-sm text-secondary">{meta}</p>}
+          </div>
+        </div>
+      </GlowEffect>
+    </div>
   );
 }

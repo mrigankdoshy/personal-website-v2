@@ -1,4 +1,4 @@
-import Link from '@/shared/ui/link';
+import { Link } from '@/shared/ui/link';
 import { CSSProperties } from 'react';
 
 export async function Home() {

@@ -1,8 +1,8 @@
 'use client';
 
+import { cn } from '@/shared/utils/cn';
 import { useMousePosition } from '@/shared/utils/use-mouse-position';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { CSSProperties, ReactNode } from 'react';
 
 type GlowEffectProps = Readonly<{
@@ -36,35 +36,36 @@ export function GlowEffect({
   intensity = 10,
 }: GlowEffectProps) {
   const { x, y } = useMousePosition();
+
   const offset = size / 2;
 
-  // Determine if the current device is a mobile device
   const isMobile =
     typeof window !== 'undefined' &&
     window.matchMedia('(max-width: 768px)').matches;
 
+  const style = {
+    '--x': `${x ? x - offset : -offset}px`,
+    '--y': `${y ? y - offset : -offset}px`,
+    width: size,
+    height: size,
+    background: 'radial-gradient(#FFFFFF 0%, rgba(188, 255, 219, 0) 60%)',
+  } as CSSProperties;
+
+  const variants: Variants = {
+    hover: {
+      opacity: isMobile ? 0 : intensity / 100,
+    },
+  };
+
   return (
     <motion.div
-      className={clsx('relative h-full w-full overflow-hidden', className)}
+      className={cn('relative h-full w-full overflow-hidden', className)}
       whileHover="hover"
     >
       <motion.div
-        style={
-          {
-            '--x': `${x ? x - offset : -offset}px`,
-            '--y': `${y ? y - offset : -offset}px`,
-            width: size,
-            height: size,
-            background:
-              'radial-gradient(#FFFFFF 0%, rgba(188, 255, 219, 0) 60%)',
-          } as CSSProperties
-        }
         className="pointer-events-none absolute inset-0 z-50 translate-x-[var(--x)] translate-y-[var(--y)] opacity-0 transition-opacity"
-        variants={{
-          hover: {
-            opacity: isMobile ? 0 : intensity / 100,
-          },
-        }}
+        style={style}
+        variants={variants}
       />
       {children}
     </motion.div>

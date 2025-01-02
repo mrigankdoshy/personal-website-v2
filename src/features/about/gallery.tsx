@@ -1,10 +1,68 @@
 'use client';
 
 import { Picture } from '@/shared/ui/picture';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import me from 'public/images/me.jpg';
+import { CSSProperties } from 'react';
+
+type ImageProps = Readonly<{
+  src: StaticImageData | string;
+  alt: string;
+  meta: string;
+  width: number;
+  height: number;
+  rotate: number;
+  left: number;
+  index: number;
+  flipDirection?: 'left' | 'right';
+}>;
 
 // TODO: Replace images
+const images: ImageProps[] = [
+  {
+    src: me,
+    alt: 'Mrigank',
+    meta: '2021-07-12',
+    width: 324,
+    height: 239,
+    rotate: -6,
+    left: -56,
+    index: 1,
+  },
+  {
+    src: me,
+    alt: 'Mrigank',
+    meta: '2017-07-04',
+    width: 230,
+    height: 250,
+    rotate: 6.3,
+    left: 160,
+    index: 2,
+    flipDirection: 'left',
+  },
+  {
+    src: me,
+    alt: 'Mrigank',
+    meta: '2021-05-20',
+    width: 280,
+    height: 235,
+    rotate: -5.4,
+    left: 280,
+    index: 3,
+  },
+  {
+    src: me,
+    alt: 'Mrigank',
+    meta: '2022-09-10',
+    width: 220,
+    height: 260,
+    rotate: 7.6,
+    left: 500,
+    index: 4,
+    flipDirection: 'left',
+  },
+];
+
 export function Gallery() {
   return (
     <div className="relative">
@@ -12,7 +70,7 @@ export function Gallery() {
       <div className="mb-8 md:hidden">
         <div
           className="animate-fade-in"
-          style={{ '--index': 1 } as React.CSSProperties}
+          style={{ '--index': 1 } as CSSProperties}
         >
           <Image
             src={me}
@@ -25,7 +83,7 @@ export function Gallery() {
         </div>
         <div
           className="animate-fade-in"
-          style={{ '--index': 2 } as React.CSSProperties}
+          style={{ '--index': 2 } as CSSProperties}
         >
           <Image
             src={me}
@@ -40,48 +98,20 @@ export function Gallery() {
 
       {/* Desktop view */}
       <section className="relative hidden h-[268px] gap-4 md:flex">
-        <Picture
-          src={me}
-          meta="2021-07-12"
-          alt="Mrigank"
-          width={324}
-          height={239}
-          rotate={-6}
-          left={-56}
-          index={1}
-        />
-        <Picture
-          src={me}
-          meta="2017-07-04"
-          alt="Mrigank"
-          width={230}
-          height={250}
-          rotate={6.3}
-          left={160}
-          index={2}
-          flipDirection="left"
-        />
-        <Picture
-          src={me}
-          meta="2021-05-20"
-          alt="Mrigank"
-          width={280}
-          height={235}
-          rotate={-5.4}
-          left={280}
-          index={3}
-        />
-        <Picture
-          src={me}
-          meta="2022-09-10"
-          alt="Mrigank"
-          width={220}
-          height={260}
-          rotate={7.6}
-          left={500}
-          index={4}
-          flipDirection="left"
-        />
+        {images.map((image, index) => (
+          <Picture
+            key={index}
+            index={image.index}
+            src={image.src}
+            alt={image.alt}
+            meta={image.meta}
+            width={image.width}
+            height={image.height}
+            rotate={image.rotate}
+            left={image.left}
+            flipDirection={image.flipDirection}
+          />
+        ))}
       </section>
     </div>
   );

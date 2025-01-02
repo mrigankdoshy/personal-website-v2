@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from 'clsx';
+import { cn } from '@/shared/utils/cn';
 import { ReactNode } from 'react';
 
 type Alignment = 'right' | 'left';
@@ -18,7 +18,7 @@ export function Section({ heading, alignment, children }: SectionProps) {
       id={heading.toLowerCase().replace(/\s/g, '-')}
     >
       <h2
-        className={clsx(
+        className={cn(
           'shrink-0 text-muted-foreground md:w-32',
           alignment === 'right' && 'md:text-right'
         )}
