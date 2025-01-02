@@ -10,6 +10,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    name: 🛠️ Build Next.js App
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛠️ Build
+        run: pnpm run build
   lint:
     name: ⬣ ESLint, ʦ TypeScript, and 💅 Prettier
     runs-on: ubuntu-latest
