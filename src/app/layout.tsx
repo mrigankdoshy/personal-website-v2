@@ -1,17 +1,11 @@
 import { Navigation } from '@/features/navigation/navigation';
 import { ThemeProvider } from '@/features/theme/theme-provider';
+import { siteConfig } from '@/shared/config/site-config';
 import '@/shared/styles/globals.css';
 import { cn } from '@/shared/utils/cn';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
-
-const siteConfig = {
-  title: 'Mrigank Doshy',
-  description:
-    'Software Engineer with a passion for developing (and occasionally designing) digital experiences.',
-  url: 'https://mrigankdoshy.com',
-};
 
 const fontSans = Inter({
   subsets: ['latin'],
@@ -70,7 +64,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navigation />
-          {children}
+          <div className="mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
