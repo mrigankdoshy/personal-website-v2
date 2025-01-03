@@ -3,11 +3,9 @@
 import { cn } from '@/shared/utils/cn';
 import { ReactNode } from 'react';
 
-type Alignment = 'right' | 'left';
-
 type SectionProps = Readonly<{
   heading: string;
-  alignment: Alignment;
+  alignment: 'right' | 'left';
   children: ReactNode;
 }>;
 
