@@ -1,7 +1,7 @@
 import { Link } from '@/shared/ui/link';
 import { CSSProperties } from 'react';
 
-export async function Home() {
+export function Home() {
   return (
     <div className="flex flex-col gap-16 md:gap-24">
       <div className="flex flex-col gap-8">

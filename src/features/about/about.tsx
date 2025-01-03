@@ -21,7 +21,7 @@ export function About() {
           className="animate-fade-in text-muted-foreground"
           style={{ '--index': 1 } as CSSProperties}
         >
-          A glimpse into my life
+          A glimpse into me.
         </p>
       </div>
 
