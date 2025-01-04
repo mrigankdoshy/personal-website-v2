@@ -23,8 +23,8 @@ const images: ImageProps[] = [
     src: me,
     alt: 'Mrigank',
     meta: '2024-08-12',
-    width: 324,
-    height: 239,
+    width: 320,
+    height: 240,
     rotate: -6,
     left: -56,
     index: 1,
@@ -45,7 +45,7 @@ const images: ImageProps[] = [
     alt: 'Goa',
     meta: '2022-12-20',
     width: 280,
-    height: 235,
+    height: 230,
     rotate: -5.4,
     left: 300,
     index: 3,
@@ -75,8 +75,8 @@ export function Gallery() {
           <Image
             src={me}
             alt="Mrigank"
-            width={324}
-            height={139}
+            width={320}
+            height={240}
             className="pointer-events-none relative inset-0 h-52 w-60 -rotate-6 rounded-xl bg-neutral-400 object-cover object-right shadow-md"
             priority
           />
@@ -86,8 +86,8 @@ export function Gallery() {
           style={{ '--index': 2 } as CSSProperties}
         >
           <Image
-            src={me}
-            alt="Mrigank"
+            src={friends}
+            alt="Friends"
             width={220}
             height={260}
             className="pointer-events-none absolute inset-0 -top-44 left-[40%] w-48 rotate-6 rounded-xl bg-neutral-400 object-cover shadow-md md:left-[60%] md:w-56"
