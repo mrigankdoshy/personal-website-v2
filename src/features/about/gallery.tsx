@@ -2,7 +2,10 @@
 
 import { Picture } from '@/shared/ui/picture';
 import Image, { StaticImageData } from 'next/image';
+import friends from 'public/images/friends.jpg';
+import goa from 'public/images/goa.jpg';
 import me from 'public/images/me.jpg';
+import pennState from 'public/images/penn-state.jpg';
 import { CSSProperties } from 'react';
 
 type ImageProps = Readonly<{
@@ -17,12 +20,11 @@ type ImageProps = Readonly<{
   flipDirection?: 'left' | 'right';
 }>;
 
-// TODO: Replace images
 const images: ImageProps[] = [
   {
     src: me,
     alt: 'Mrigank',
-    meta: '2021-07-12',
+    meta: '2024-08-12',
     width: 324,
     height: 239,
     rotate: -6,
@@ -30,9 +32,9 @@ const images: ImageProps[] = [
     index: 1,
   },
   {
-    src: me,
-    alt: 'Mrigank',
-    meta: '2017-07-04',
+    src: pennState,
+    alt: 'Penn State',
+    meta: '2022-10-22',
     width: 230,
     height: 250,
     rotate: 6.3,
@@ -41,19 +43,19 @@ const images: ImageProps[] = [
     flipDirection: 'left',
   },
   {
-    src: me,
-    alt: 'Mrigank',
-    meta: '2021-05-20',
+    src: goa,
+    alt: 'Goa',
+    meta: '2022-12-20',
     width: 280,
     height: 235,
     rotate: -5.4,
-    left: 280,
+    left: 300,
     index: 3,
   },
   {
-    src: me,
-    alt: 'Mrigank',
-    meta: '2022-09-10',
+    src: friends,
+    alt: 'Friends',
+    meta: '2024-08-31',
     width: 220,
     height: 260,
     rotate: 7.6,
