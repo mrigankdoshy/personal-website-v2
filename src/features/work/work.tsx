@@ -1,4 +1,5 @@
 import { Section } from '@/features/about/section';
+import { Link } from '@/shared/ui/link';
 import { Tag } from '@/shared/ui/tag';
 import { CSSProperties } from 'react';
 
@@ -31,11 +32,17 @@ export function Work() {
               </h3>
             </div>
             <p>
-              I lead the development of a new cross-platform mobile app for
-              KCF&apos;s machine health monitoring platform that delivers
-              real-time machine health insights and streamlines asset
-              management. The app supports plant-floor teams with tools for
-              issue resolution, hardware installation, and troubleshooting.
+              I currently lead the development of a new cross-platform mobile
+              app for KCF&apos;s{' '}
+              <Link
+                href="https://kcftech.com/solutions/smartdiagnostics/"
+                underline
+              >
+                machine health monitoring platform
+              </Link>{' '}
+              that delivers real-time machine health insights and streamlines
+              asset management. The app supports plant-floor teams with tools
+              for issue resolution, hardware installation, and troubleshooting.
             </p>
             <p>
               Alongside mobile development, I contribute to the web app,
@@ -75,13 +82,29 @@ export function Work() {
               </h3>
             </div>
             <p>
-              Developed an automated solution using the Creopyson Python library
-              to streamline the conversion of 2D schematics into 3D CAD models
-              in CREO: Parametric, eliminating manual updates. Designed an
-              algorithm to optimize cable and fuel line routing based on spatial
-              and environmental constraints, reducing repetitive engineering
-              processes. The solution is now being implemented in Volvo&apos;s
-              system by an internal team.
+              Developed an automated solution using the{' '}
+              <Link
+                href="https://creopyson.readthedocs.io/en/latest/readme.html"
+                underline
+              >
+                Creopyson
+              </Link>{' '}
+              Python library to streamline the conversion of 2D schematics into
+              3D CAD models in{' '}
+              <Link href="https://www.ptc.com/en/products/creo/parametric">
+                Creo Parametric
+              </Link>
+              , eliminating manual updates. Designed an algorithm to optimize
+              cable and fuel line routing based on spatial and environmental
+              constraints, reducing repetitive engineering processes. The{' '}
+              <Link
+                href="https://sites.psu.edu/lfshowcasesp21/2021/04/29/routing-productivity-improvement/"
+                underline
+              >
+                project
+              </Link>{' '}
+              is now being implemented in Volvo&apos;s system by an internal
+              team.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <Tag label="Python" href="https://www.python.org" />
@@ -106,10 +129,29 @@ export function Work() {
             <p>
               Mule was an innovative peer-to-peer delivery platform that
               empowered students to help each other by efficiently managing
-              their time. I developed the iOS and Android apps using Flutter,
-              designed the UI/UX, and built the backend with Node.js and
-              MongoDB. I also implemented geolocation and routing with Google
-              Maps, along with a Firebase-based notification system.
+              their time. I designed the UI/UX, developed the{' '}
+              <Link
+                href="https://apps.apple.com/us/app/mule-delivery/id1554136114"
+                underline
+              >
+                iOS
+              </Link>{' '}
+              and{' '}
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.themuleapp.app"
+                underline
+              >
+                Android
+              </Link>{' '}
+              apps using <Link href="https://flutter.dev">Flutter</Link>, and
+              built the backend with{' '}
+              <Link href="https://expressjs.com">Express</Link> and{' '}
+              <Link href="https://www.mongodb.com">MongoDB</Link>. I also
+              implemented geolocation and routing with{' '}
+              <Link href="https://mapsplatform.google.com">Google Maps</Link>,
+              along with a{' '}
+              <Link href="https://firebase.google.com">Firebase</Link>-based
+              notification system.
             </p>
             <p>
               As a founder, I played a key role in pitching to investors and
@@ -150,10 +192,12 @@ export function Work() {
               FinTech and blockchain skills. I led the planning and execution of
               technological projects and strategic initiatives to foster growth
               and engagement within the community. In addition to teaching an
-              officially offered blockchain course at Penn State, I cultivated
-              valuable partnerships with organizations like Microsoft, IBM,
-              BlockVenture Coalition, and others, expanding the impact of the
-              blockchain ecosystem at the university.
+              officially offered blockchain course at{' '}
+              <Link href="https://psu.edu" underline>
+                Penn State
+              </Link>
+              , I cultivated valuable partnerships with organizations, expanding
+              the impact of the blockchain ecosystem at the university.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <Tag label="Blockchain" />
