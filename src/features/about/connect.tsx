@@ -13,13 +13,13 @@ import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactNode } from 'react';
 
-type ConnectMethod = Readonly<{
+type ConnectLink = Readonly<{
   label: string;
   href: string;
   icon: ReactNode;
 }>;
 
-const connectMethods: ConnectMethod[] = [
+const connectLink: ConnectLink[] = [
   {
     label: 'Email',
     href: 'mailto:mrigankdoshy@gmail.com',
@@ -56,16 +56,16 @@ export function Connect() {
   return (
     <Section heading="Connect" alignment="left">
       <ul className="animated-list grid flex-grow grid-cols-1 gap-3 md:grid-cols-2">
-        {connectMethods.map((method) => (
-          <li className="col-span-1 transition-opacity" key={method.label}>
+        {connectLink.map(({ label, icon, href }) => (
+          <li key={label} className="col-span-1 transition-opacity">
             <Link
-              href={method.href}
+              href={href}
               className="inline-grid w-full rounded-lg bg-secondary p-4 no-underline transition-opacity"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="text-xl">{method.icon}</span>
-                  <span className="text-sm">{method.label}</span>
+                  <span className="text-xl">{icon}</span>
+                  <span className="text-sm">{label}</span>
                 </div>
                 <FontAwesomeIcon
                   className="-rotate-45 text-muted-foreground"
