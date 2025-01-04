@@ -60,7 +60,7 @@ export function Connect() {
           <li key={label} className="col-span-1 transition-opacity">
             <Link
               href={href}
-              className="inline-grid w-full rounded-lg bg-secondary p-4 no-underline transition-opacity"
+              className="group inline-grid w-full transform rounded-lg bg-secondary p-4 text-foreground no-underline transition duration-200 hover:scale-105 hover:text-foreground"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -68,7 +68,7 @@ export function Connect() {
                   <span className="text-sm">{label}</span>
                 </div>
                 <FontAwesomeIcon
-                  className="-rotate-45 text-muted-foreground"
+                  className="-rotate-45 transform transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   icon={faArrowRight}
                 />
               </div>
