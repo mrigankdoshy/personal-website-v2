@@ -1,4 +1,5 @@
 import { AboutMe } from '@/features/about/about-me';
+import { Connect } from '@/features/about/connect';
 import { Gallery } from '@/features/about/gallery';
 
 import { CSSProperties } from 'react';
@@ -17,19 +18,23 @@ export function About() {
           A glimpse into me.
         </p>
       </div>
-
       <div
         className="animate-fade-in"
         style={{ '--index': 2 } as CSSProperties}
       >
         <Gallery />
       </div>
-
       <div
         className="animate-fade-in"
         style={{ '--index': 3 } as CSSProperties}
       >
         <AboutMe />
+      </div>
+      <div
+        className="animate-fade-in"
+        style={{ '--index': 4 } as CSSProperties}
+      >
+        <Connect />
       </div>
     </div>
   );
