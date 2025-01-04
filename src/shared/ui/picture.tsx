@@ -139,7 +139,7 @@ function BackSide({ filename, meta }: BackSideProps) {
       style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
     >
       <GlowEffect intensity={50} className="flex items-center">
-        <span className="absolute h-[500px] w-[500px] rotate-[-20deg] bg-[url('/images/photo-paper.png')] bg-[length:280px] bg-repeat" />
+        <span className="absolute h-[500px] w-[500px] rotate-[-20deg] bg-[url('/images/crystal-archive-paper.png')] bg-[length:280px] bg-repeat" />
         <div className="z-[1] px-6">
           <div
             className={cn(
