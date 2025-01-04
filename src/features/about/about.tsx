@@ -1,5 +1,3 @@
-'use client';
-
 import { Gallery } from '@/features/about/gallery';
 import { Greeting } from '@/features/about/greeting';
 import { Section } from '@/features/about/section';

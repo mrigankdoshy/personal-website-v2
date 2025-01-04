@@ -1,5 +1,3 @@
-'use client';
-
 import { Picture } from '@/shared/ui/picture';
 import Image, { StaticImageData } from 'next/image';
 import friends from 'public/images/friends.jpg';

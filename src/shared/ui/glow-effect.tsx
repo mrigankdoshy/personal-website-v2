@@ -1,5 +1,3 @@
-'use client';
-
 import { cn } from '@/shared/utils/cn';
 import { useMousePosition } from '@/shared/utils/use-mouse-position';
 import { motion, Variants } from 'framer-motion';
