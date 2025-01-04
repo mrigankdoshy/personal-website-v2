@@ -147,8 +147,8 @@ function BackSide({ filename, meta }: BackSideProps) {
               'flex flex-col gap-1 uppercase'
             )}
           >
-            <p className="text-secondary">{filename}</p>
-            {meta && <p className="text-sm text-secondary">{meta}</p>}
+            <p className="text-muted-foreground">{filename}</p>
+            {meta && <p className="text-sm text-muted-foreground">{meta}</p>}
           </div>
         </div>
       </GlowEffect>
