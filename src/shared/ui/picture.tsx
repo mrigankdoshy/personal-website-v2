@@ -134,12 +134,12 @@ function BackSide({ filename, meta }: BackSideProps) {
     <div
       className={cn(
         className,
-        'flex items-center overflow-hidden rounded-xl bg-[#FFFAF2]'
+        'flex items-center overflow-hidden rounded-xl bg-[#FEFEFE]'
       )}
       style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
     >
       <GlowEffect intensity={50} className="flex items-center">
-        <span className="absolute h-[500px] w-[500px] rotate-[-20deg] bg-[url('/images/crystal-archive-paper.png')] bg-[length:280px] bg-repeat" />
+        <span className="absolute h-[850px] w-[850px] bg-[url('/images/crystal-archive-paper.png')] bg-[length:280px] bg-repeat" />
         <div className="z-[1] px-6">
           <div
             className={cn(
