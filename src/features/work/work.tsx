@@ -19,7 +19,7 @@ export function Work() {
           className="animate-fade-in text-muted-foreground"
           style={{ '--index': 1 } as CSSProperties}
         >
-          Here are some of the places I have worked.
+          A glimpse into some places I&apos;ve shaped and grown with.
         </p>
       </div>
       <div

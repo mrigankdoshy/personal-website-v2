@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
   return <About />;
 }
