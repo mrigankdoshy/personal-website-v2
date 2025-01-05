@@ -1,11 +1,12 @@
+'use client';
+
 import { Section } from '@/features/about/section';
 import { workExperiences } from '@/features/work/work-experience';
-import { Link } from '@/shared/ui/link';
 import { Tag } from '@/shared/ui/tag';
 import { CSSProperties } from 'react';
 
 const linkClassName =
-  'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01]';
+  'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01] w-full cursor-pointer border-none bg-transparent p-0 text-left focus:outline-none';
 
 export function Work() {
   return (
@@ -27,7 +28,11 @@ export function Work() {
       >
         {workExperiences.map(
           ({ id, href, description, date, role, company, tags }) => (
-            <Link key={id} href={href} className={linkClassName}>
+            <button
+              key={id}
+              onClick={() => window.open(href, '_blank')}
+              className={linkClassName}
+            >
               <Section heading={date} alignment="left">
                 <div className="flex flex-col gap-6">
                   <div>
@@ -46,7 +51,7 @@ export function Work() {
                   </div>
                 </div>
               </Section>
-            </Link>
+            </button>
           )
         )}
       </div>
