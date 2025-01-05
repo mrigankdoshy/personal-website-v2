@@ -60,7 +60,7 @@ export function Connect() {
           <li key={label} className="col-span-1 transition-opacity">
             <Link
               href={href}
-              className="group inline-grid w-full transform rounded-lg bg-secondary p-4 text-foreground no-underline transition duration-200 hover:scale-105"
+              className="group inline-grid w-full transform rounded-lg bg-secondary p-4 text-foreground no-underline transition duration-200 hover:scale-[1.03]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
