@@ -4,7 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const cardClassName =
-  'group flex h-full flex-col rounded-lg border-2 border-secondary p-4 text-muted-foreground no-underline transition duration-300 hover:scale-[1.03]';
+  'group flex h-full flex-col rounded-lg border-2 border-secondary p-4 text-muted-foreground no-underline transform transition duration-300 hover:scale-[1.03]';
 
 type ProjectCardProps = Readonly<{
   url?: string;
@@ -57,12 +57,14 @@ function CardContent({ title, description, tags, showIcon }: CardContentProps) {
           <span className="text-xl font-bold text-foreground">{title}</span>
           {showIcon && (
             <FontAwesomeIcon
-              className="size-5 group-hover:text-foreground"
+              className="size-5 transform transition duration-200 group-hover:text-foreground"
               icon={faGithub}
             />
           )}
         </div>
-        <span className="group-hover:text-foreground">{description}</span>
+        <span className="transform transition duration-200 group-hover:text-foreground">
+          {description}
+        </span>
       </div>
       <div className="flex flex-wrap gap-2 text-sm group-hover:text-foreground">
         {tags.map((label) => (
