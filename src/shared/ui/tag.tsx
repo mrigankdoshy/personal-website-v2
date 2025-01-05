@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const className =
   'hover:bg-tertiary flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline text-secondary-foreground gap-2 ';
 
-type TagProps = Readonly<{
-  href?: string;
+export type TagProps = Readonly<{
   label: string;
+  href?: string;
 }>;
 
-export function Tag({ href, label }: TagProps) {
+export function Tag({ label, href }: TagProps) {
   return href ? (
     <Link
       href={href}
