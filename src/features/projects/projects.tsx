@@ -1,3 +1,5 @@
+import { projects } from '@/features/projects/data.json';
+import { ProjectCard } from '@/features/projects/project-card';
 import { CSSProperties } from 'react';
 
 export function Projects() {
@@ -15,10 +17,21 @@ export function Projects() {
         </p>
       </div>
       <div
-        className="group flex animate-fade-in flex-col gap-12"
+        className="animate-fade-in"
         style={{ '--index': 2 } as CSSProperties}
       >
-        <></>
+        <ul className="animated-list grid flex-grow grid-cols-1 gap-3 md:grid-cols-2">
+          {projects.map(({ id, title, description, url, tags }) => (
+            <li key={id} className="col-span-1">
+              <ProjectCard
+                title={title}
+                description={description}
+                url={url}
+                tags={tags}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

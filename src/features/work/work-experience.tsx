@@ -125,7 +125,6 @@ export const workExperiences: WorkExperience[] = [
     ),
     tags: [
       { label: 'Flutter', href: 'https://flutter.dev' },
-      { label: 'Node.js', href: 'https://nodejs.org' },
       { label: 'Express', href: 'https://expressjs.com' },
       { label: 'MobX', href: 'https://mobx.js.org' },
       { label: 'MongoDB', href: 'https://www.mongodb.com' },

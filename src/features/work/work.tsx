@@ -39,12 +39,12 @@ export function Work() {
                     <h2 className="text-xl font-bold tracking-tight text-foreground">
                       {role}
                     </h2>
-                    <h3 className="text-md tracking-tight text-muted-foreground">
+                    <h3 className="tracking-tight text-muted-foreground">
                       {company}
                     </h3>
                   </div>
                   <p>{description}</p>
-                  <div className="flex flex-wrap gap-3 text-sm">
+                  <div className="flex flex-wrap gap-2 text-sm">
                     {tags.map(({ label, href }) => (
                       <Tag key={label} label={label} href={href} />
                     ))}
