@@ -32,10 +32,34 @@
 - 🗺 [Site Map](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap) — Automatically generates a `sitemap.xml` for SEO.
 - 🔺 [Vercel](https://vercel.com/) — Platform for serverless deployments with automatic scaling and continuous deployment.
 
-
 ## 🚀 Building and Running
 
-TBD
+First, clone this repository to your local machine using Git and give it a name:
+
+```bash
+git clone https://github.com/mrigankdoshy/personal-website-v2.git your-repo-name
+```
+
+Navigate to the project folder and install the necessary dependencies:
+
+```bash
+cd your-repo-name
+pnpm install
+```
+
+Start the development server locally by running:
+
+```bash
+pnpm dev
+```
+
+This will launch the app in your browser, typically at `http://localhost:3000`.
+
+To build the app for production, use the following command:
+
+```bash
+pnpm build
+```
 
 ## ⚠️ Disclaimer
 
