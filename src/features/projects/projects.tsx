@@ -2,16 +2,21 @@
 
 import { projects } from '@/features/projects/data.json';
 import { ProjectCard } from '@/features/projects/project-card';
+import { useMasonry } from '@/features/projects/useMasonry';
 import { Button } from '@/shared/ui/button';
+import { useMediaQuery } from '@/shared/utils/use-media-query';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CSSProperties, useMemo, useState } from 'react';
 
 export function Projects() {
+  const masonryContainer = useMasonry();
+  const isSmallScreen = useMediaQuery(640);
+
   const [showAll, setShowAll] = useState(false);
 
   const projectsToDisplay = useMemo(
-    () => (showAll ? projects : projects.slice(0, 6)),
-    [showAll]
+    () => (!isSmallScreen || showAll ? projects : projects.slice(0, 6)),
+    [isSmallScreen, showAll]
   );
 
   return (
@@ -29,54 +34,55 @@ export function Projects() {
           </p>
         </div>
         <div
-          className="animate-fade-in"
+          ref={masonryContainer}
+          className="grid animate-fade-in items-start gap-4 sm:grid-cols-2 md:gap-6"
           style={{ '--index': 2 } as CSSProperties}
         >
-          <motion.ul className="animated-list grid flex-grow grid-cols-1 gap-3 md:grid-cols-2">
-            <AnimatePresence>
-              {projectsToDisplay.map(
-                ({ id, title, description, url, tags }, index) => (
-                  <motion.li
-                    key={id}
-                    className="col-span-1"
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                      y: 0,
-                      transition: {
-                        type: 'spring',
-                        duration: 0.3,
-                        stiffness: 100,
-                        delay: index * 0.1,
-                      },
-                    }}
-                    initial={{ opacity: 0, x: -20, y: -20 }}
-                    exit={{ opacity: 0, x: -10, y: -10 }}
-                  >
-                    <ProjectCard
-                      title={title}
-                      description={description}
-                      url={url}
-                      tags={tags}
-                    />
-                  </motion.li>
-                )
-              )}
-            </AnimatePresence>
-          </motion.ul>
+          <AnimatePresence>
+            {projectsToDisplay.map(
+              ({ id, title, description, url, tags }, index) => (
+                <motion.div
+                  key={id}
+                  className="col-span-1"
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: {
+                      type: 'spring',
+                      duration: 0.3,
+                      stiffness: 100,
+                      delay: index * 0.1,
+                    },
+                  }}
+                  initial={{ opacity: 0, x: -20, y: -20 }}
+                  exit={{ opacity: 0, x: -10, y: -10 }}
+                >
+                  <ProjectCard
+                    title={title}
+                    description={description}
+                    url={url}
+                    tags={tags}
+                  />
+                </motion.div>
+              )
+            )}
+          </AnimatePresence>
         </div>
       </div>
-      <div
-        className="animate-fade-in self-center"
-        style={{ '--index': 3 } as CSSProperties}
-      >
-        <Button
-          variant="secondary"
-          onClick={() => setShowAll((current) => !current)}
+      {isSmallScreen && (
+        <div
+          className="animate-fade-in self-center"
+          style={{ '--index': 3 } as CSSProperties}
         >
-          {showAll ? 'Show Less' : 'Show More'}
-        </Button>
-      </div>
+          <Button
+            variant="secondary"
+            onClick={() => setShowAll((current) => !current)}
+          >
+            {showAll ? 'Show Less' : 'Show More'}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
