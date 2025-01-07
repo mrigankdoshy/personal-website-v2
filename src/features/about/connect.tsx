@@ -1,7 +1,7 @@
 'use client';
 
-import { Section } from '@/features/about/section';
 import { Link } from '@/shared/ui/link';
+import { Section } from '@/shared/ui/section';
 import {
   faGithub,
   faInstagram,

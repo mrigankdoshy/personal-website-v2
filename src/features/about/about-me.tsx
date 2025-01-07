@@ -1,6 +1,6 @@
 import { Greeting } from '@/features/about/greeting';
-import { Section } from '@/features/about/section';
 import { Link } from '@/shared/ui/link';
+import { Section } from '@/shared/ui/section';
 import { differenceInYears } from 'date-fns';
 
 const age = differenceInYears(new Date(), new Date(1999, 7, 12));
