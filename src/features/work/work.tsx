@@ -1,7 +1,7 @@
 'use client';
 
-import { Section } from '@/features/about/section';
 import { workExperiences } from '@/features/work/work-experience';
+import { Section } from '@/shared/ui/section';
 import { Tag } from '@/shared/ui/tag';
 import { CSSProperties } from 'react';
 
