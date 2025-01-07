@@ -1,7 +1,6 @@
 import { AboutMe } from '@/features/about/about-me';
 import { Connect } from '@/features/about/connect';
 import { Gallery } from '@/features/about/gallery';
-
 import { CSSProperties } from 'react';
 
 export function About() {
