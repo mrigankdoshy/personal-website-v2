@@ -1,3 +1,4 @@
+import { BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Link } from '@/shared/ui/link';
 import { TagProps } from '@/shared/ui/tag';
 import { ReactNode } from 'react';
@@ -21,21 +22,29 @@ export const workExperiences: WorkExperience[] = [
     company: 'KCF Technologies',
     description: (
       <>
-        I currently lead the development of a new cross-platform mobile app for
-        KCF&apos;s{' '}
-        <Link href="https://kcftech.com/solutions/smartdiagnostics/" underline>
-          machine health monitoring platform
-        </Link>{' '}
-        that delivers real-time machine health insights and streamlines asset
-        management. The app supports plant-floor teams with tools for issue
-        resolution, hardware installation, and troubleshooting.
+        <BlurRevealContent>
+          I currently lead the development of a new cross-platform mobile app
+          for KCF&apos;s{' '}
+          <Link
+            href="https://kcftech.com/solutions/smartdiagnostics/"
+            underline
+          >
+            machine health monitoring platform
+          </Link>{' '}
+          that delivers real-time machine health insights and streamlines asset
+          management. The app supports plant-floor teams with tools for issue
+          resolution, hardware installation, and troubleshooting.
+        </BlurRevealContent>
         <br />
-        <br />I also contribute to the web app, building and maintaining key
-        features to ensure intuitive and scalable interfaces. Notably, I
-        implemented an issue management system to streamline workflows and
-        foster collaboration that is now a core offering of the software. I also
-        helped develop a unified design system to maintain consistency and
-        efficiency across all applications.
+        <br />
+        <BlurRevealContent>
+          I also contribute to the web app, building and maintaining key
+          features to ensure intuitive and scalable interfaces. Notably, I
+          implemented an issue management system to streamline workflows and
+          foster collaboration that is now a core offering of the software. I
+          also helped develop a unified design system to maintain consistency
+          and efficiency across all applications.
+        </BlurRevealContent>
       </>
     ),
     tags: [
@@ -61,7 +70,7 @@ export const workExperiences: WorkExperience[] = [
     role: 'Software Engineer - Capstone Project',
     company: 'Volvo',
     description: (
-      <>
+      <BlurRevealContent>
         Developed an automated solution to streamline the conversion of 2D
         schematics into 3D CAD models in{' '}
         <Link href="https://www.ptc.com/en/products/creo/parametric">
@@ -78,7 +87,7 @@ export const workExperiences: WorkExperience[] = [
         </Link>{' '}
         helped reduce manual effort and enhanced productivity, leading to its
         adoption by Volvo&apos;s internal teams.
-      </>
+      </BlurRevealContent>
     ),
     tags: [
       { label: 'Python', href: 'https://www.python.org' },
@@ -96,31 +105,35 @@ export const workExperiences: WorkExperience[] = [
     company: 'Mule',
     description: (
       <>
-        Built and launched a peer-to-peer delivery platform, that empowered
-        students to be one another&apos;s service providers while efficiently
-        managing their time. I designed the UI/UX, developed the{' '}
-        <Link
-          href="https://apps.apple.com/us/app/mule-delivery/id1554136114"
-          underline
-        >
-          iOS
-        </Link>{' '}
-        and{' '}
-        <Link
-          href="https://play.google.com/store/apps/details?id=com.themuleapp.app"
-          underline
-        >
-          Android
-        </Link>{' '}
-        apps, and contributed to the backend development. Some features included
-        geolocation, routing, and notifications.
+        <BlurRevealContent>
+          Built and launched a peer-to-peer delivery platform, that empowered
+          students to be one another&apos;s service providers while efficiently
+          managing their time. I designed the UI/UX, developed the{' '}
+          <Link
+            href="https://apps.apple.com/us/app/mule-delivery/id1554136114"
+            underline
+          >
+            iOS
+          </Link>{' '}
+          and{' '}
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.themuleapp.app"
+            underline
+          >
+            Android
+          </Link>{' '}
+          apps, and contributed to the backend development. Some features
+          included geolocation, routing, and notifications.
+        </BlurRevealContent>
         <br />
         <br />
-        As a founder, I played a key role in pitching to investors and venture
-        capitalists for pre-seed funding, conducting market research, and
-        analyzing data to guide product decisions. My efforts focused on
-        validating customer needs, refining the product, and driving its
-        strategic growth through technical innovation and market insights.
+        <BlurRevealContent>
+          As a founder, I played a key role in pitching to investors and venture
+          capitalists for pre-seed funding, conducting market research, and
+          analyzing data to guide product decisions. My efforts focused on
+          validating customer needs, refining the product, and driving its
+          strategic growth through technical innovation and market insights.
+        </BlurRevealContent>
       </>
     ),
     tags: [
@@ -142,7 +155,7 @@ export const workExperiences: WorkExperience[] = [
     role: 'Co-Founder',
     company: 'Blockchain@PSU',
     description: (
-      <>
+      <BlurRevealContent>
         Co-founded and scaled a student-run organization to over 300 members,
         fostering FinTech and blockchain skills through hands-on projects and
         strategic initiatives. Spearheaded partnerships, taught an official
@@ -151,7 +164,7 @@ export const workExperiences: WorkExperience[] = [
           Penn State
         </Link>
         .
-      </>
+      </BlurRevealContent>
     ),
     tags: [
       { label: 'Blockchain' },

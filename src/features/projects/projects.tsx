@@ -3,10 +3,11 @@
 import { projects } from '@/features/projects/data.json';
 import { ProjectCard } from '@/features/projects/project-card';
 import { useMasonry } from '@/features/projects/useMasonry';
+import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Button } from '@/shared/ui/button';
 import { useMediaQuery } from '@/shared/utils/use-media-query';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CSSProperties, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export function Projects() {
   const masonryContainer = useMasonry();
@@ -22,21 +23,19 @@ export function Projects() {
   return (
     <div className="flex flex-col gap-8 md:gap-16">
       <div className="flex flex-col gap-16 md:gap-24">
-        <div>
-          <h1 className="animate-fade-in text-3xl font-bold tracking-tight text-foreground">
-            Things I&apos;ve built
+        <BlurReveal>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            <BlurRevealContent>Things I&apos;ve built</BlurRevealContent>
           </h1>
-          <p
-            className="animate-fade-in text-muted-foreground"
-            style={{ '--index': 1 } as CSSProperties}
-          >
-            Some highlights from my journey of building and creating.
+          <p className="text-muted-foreground">
+            <BlurRevealContent>
+              Some highlights from my journey of building and creating.
+            </BlurRevealContent>
           </p>
-        </div>
+        </BlurReveal>
         <div
           ref={masonryContainer}
-          className="grid animate-fade-in items-start gap-4 sm:grid-cols-2 md:gap-6"
-          style={{ '--index': 2 } as CSSProperties}
+          className="grid items-start gap-4 sm:grid-cols-2 md:gap-6"
         >
           <AnimatePresence>
             {projectsToDisplay.map(
@@ -71,10 +70,7 @@ export function Projects() {
         </div>
       </div>
       {isSmallScreen && (
-        <div
-          className="animate-fade-in self-center"
-          style={{ '--index': 3 } as CSSProperties}
-        >
+        <div className="self-center">
           <Button
             variant="secondary"
             onClick={() => setShowAll((current) => !current)}

@@ -1,9 +1,9 @@
 'use client';
 
 import { workExperiences } from '@/features/work/work-experience';
+import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Section } from '@/shared/ui/section';
 import { Tag } from '@/shared/ui/tag';
-import { CSSProperties } from 'react';
 
 const linkClassName =
   'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01] w-full cursor-pointer border-none bg-transparent p-0 text-left focus:outline-none';
@@ -11,21 +11,17 @@ const linkClassName =
 export function Work() {
   return (
     <div className="flex flex-col gap-16 md:gap-24">
-      <div>
-        <h1 className="animate-fade-in text-3xl font-bold tracking-tight text-foreground">
-          Work
+      <BlurReveal>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <BlurRevealContent>Work</BlurRevealContent>
         </h1>
-        <p
-          className="animate-fade-in text-muted-foreground"
-          style={{ '--index': 1 } as CSSProperties}
-        >
-          A glimpse into some places I&apos;ve shaped and grown with.
+        <p className="text-muted-foreground">
+          <BlurRevealContent>
+            A glimpse into some places I&apos;ve shaped and grown with.
+          </BlurRevealContent>
         </p>
-      </div>
-      <div
-        className="group flex animate-fade-in flex-col gap-12"
-        style={{ '--index': 2 } as CSSProperties}
-      >
+      </BlurReveal>
+      <div className="group flex flex-col gap-12">
         {workExperiences.map(
           ({ id, href, description, date, role, company, tags }) => (
             <button
@@ -34,22 +30,26 @@ export function Work() {
               className={linkClassName}
             >
               <Section heading={date} alignment="left">
-                <div className="flex flex-col gap-6">
+                <BlurReveal className="flex flex-col gap-6">
                   <div>
                     <h2 className="text-xl font-bold tracking-tight text-foreground">
-                      {role}
+                      <BlurRevealContent>{role}</BlurRevealContent>
                     </h2>
                     <h3 className="tracking-tight text-muted-foreground">
-                      {company}
+                      <BlurRevealContent>{company}</BlurRevealContent>
                     </h3>
                   </div>
-                  <p>{description}</p>
+                  <p>
+                    <BlurRevealContent>{description}</BlurRevealContent>
+                  </p>
                   <div className="flex flex-wrap gap-2 text-sm">
                     {tags.map(({ label, href }) => (
-                      <Tag key={label} label={label} href={href} />
+                      <BlurRevealContent key={label}>
+                        <Tag label={label} href={href} />
+                      </BlurRevealContent>
                     ))}
                   </div>
-                </div>
+                </BlurReveal>
               </Section>
             </button>
           )
