@@ -4,7 +4,7 @@ import { projects } from '@/features/projects/data.json';
 import { ProjectCard } from '@/features/projects/project-card';
 import { useMasonry } from '@/features/projects/useMasonry';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
-import { Button } from '@/shared/ui/button';
+import { RainbowButton } from '@/shared/ui/rainbow-button';
 import { useMediaQuery } from '@/shared/utils/use-media-query';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
@@ -71,12 +71,9 @@ export function Projects() {
       </div>
       {isSmallScreen && (
         <div className="self-center">
-          <Button
-            variant="secondary"
-            onClick={() => setShowAll((current) => !current)}
-          >
+          <RainbowButton onClick={() => setShowAll((current) => !current)}>
             {showAll ? 'Show Less' : 'Show More'}
-          </Button>
+          </RainbowButton>
         </div>
       )}
     </div>
