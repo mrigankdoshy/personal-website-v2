@@ -1,11 +1,10 @@
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
+import { Card } from '@/shared/ui/card';
 import { Link } from '@/shared/ui/link';
 import { Tag } from '@/shared/ui/tag';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const cardClassName =
-  'group flex h-full flex-col rounded-lg border-2 border-secondary p-4 text-muted-foreground no-underline transform transition duration-300 hover:scale-[1.02]';
+import { useTheme } from 'next-themes';
 
 type ProjectCardProps = Readonly<{
   url?: string;
@@ -20,8 +19,12 @@ export function ProjectCard({
   description,
   tags,
 }: ProjectCardProps) {
+  const { theme } = useTheme();
   return (
-    <div className={cardClassName}>
+    <Card
+      className="group flex h-full transform flex-col p-4 text-muted-foreground no-underline shadow-sm transition duration-300 hover:scale-[1.01]"
+      gradientColor={theme === 'dark' ? '#262626' : '#D9D9D955'}
+    >
       {url ? (
         <Link href={url}>
           <CardContent
@@ -34,7 +37,7 @@ export function ProjectCard({
       ) : (
         <CardContent title={title} description={description} tags={tags} />
       )}
-    </div>
+    </Card>
   );
 }
 
