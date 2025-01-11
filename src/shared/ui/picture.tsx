@@ -2,7 +2,7 @@
 
 import { GlowEffect } from '@/shared/ui/glow-effect';
 import { cn } from '@/shared/utils/cn';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import localFont from 'next/font/local';
 import Image, { StaticImageData } from 'next/image';
 import { ReactNode, useMemo } from 'react';

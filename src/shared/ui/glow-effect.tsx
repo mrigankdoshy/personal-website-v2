@@ -1,6 +1,6 @@
 import { cn } from '@/shared/utils/cn';
 import { useMousePosition } from '@/shared/utils/use-mouse-position';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 import { CSSProperties, ReactNode } from 'react';
 
 type GlowEffectProps = Readonly<{

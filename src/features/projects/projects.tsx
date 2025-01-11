@@ -6,7 +6,7 @@ import { useMasonry } from '@/features/projects/useMasonry';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { RainbowButton } from '@/shared/ui/rainbow-button';
 import { useMediaQuery } from '@/shared/utils/use-media-query';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 
 export function Projects() {

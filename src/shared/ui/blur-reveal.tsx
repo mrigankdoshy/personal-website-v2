@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Transition, Variants } from 'framer-motion';
+import { motion, Transition, Variants } from 'motion/react';
 import { ReactNode } from 'react';
 
 const transition: Transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
