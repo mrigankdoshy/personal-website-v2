@@ -20,8 +20,8 @@ export function Card({
   gradientSize = 200,
   gradientColor = '#262626',
   gradientOpacity = 0.8,
-  gradientFrom = '#9E7AFF',
-  gradientTo = '#FE8BBB',
+  gradientFrom = '#ACACAC',
+  gradientTo = '#727272',
 }: CardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
