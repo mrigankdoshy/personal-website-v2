@@ -21,7 +21,7 @@ export const workExperiences: WorkExperience[] = [
     role: 'Software Engineer II',
     company: 'KCF Technologies',
     description: (
-      <span>
+      <>
         <BlurRevealContent>
           I currently lead the development of a new cross-platform mobile app
           for KCF&apos;s{' '}
@@ -46,7 +46,7 @@ export const workExperiences: WorkExperience[] = [
           also helped develop a unified design system to maintain consistency
           and efficiency across all applications.
         </BlurRevealContent>
-      </span>
+      </>
     ),
     tags: [
       { label: 'React', href: 'https://react.dev' },
@@ -106,7 +106,7 @@ export const workExperiences: WorkExperience[] = [
     role: 'Co-Founder and Software Engineer',
     company: 'Mule',
     description: (
-      <span>
+      <>
         <BlurRevealContent>
           Built and launched a peer-to-peer delivery platform, that empowered
           students to be one another&apos;s service providers while efficiently
@@ -138,7 +138,7 @@ export const workExperiences: WorkExperience[] = [
           validating customer needs, refining the product, and driving its
           strategic growth through technical innovation and market insights.
         </BlurRevealContent>
-      </span>
+      </>
     ),
     tags: [
       { label: 'Flutter', href: 'https://flutter.dev' },

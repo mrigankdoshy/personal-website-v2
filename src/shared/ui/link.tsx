@@ -2,6 +2,7 @@
 
 import { LinkPreview } from '@/shared/ui/link-preview';
 import { cn } from '@/shared/utils/cn';
+import { stopPropagation } from '@/shared/utils/stop-propogation';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { ReactNode } from 'react';
 
@@ -50,6 +51,7 @@ export function Link({
       href={href}
       target={isExternal ? '_blank' : undefined}
       className={baseClassNames}
+      onClick={stopPropagation}
     >
       {children}
     </NextLink>

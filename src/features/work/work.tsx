@@ -39,9 +39,9 @@ export function Work() {
                       <BlurRevealContent>{company}</BlurRevealContent>
                     </h3>
                   </div>
-                  <p>
+                  <span>
                     <BlurRevealContent>{description}</BlurRevealContent>
-                  </p>
+                  </span>
                   <div className="flex flex-wrap gap-2 text-sm">
                     {tags.map(({ label, href }) => (
                       <BlurRevealContent key={label}>

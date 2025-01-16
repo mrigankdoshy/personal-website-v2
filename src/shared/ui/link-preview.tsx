@@ -1,5 +1,6 @@
 'use client';
 
+import { stopPropagation } from '@/shared/utils/stop-propogation';
 import {
   HoverCard,
   HoverCardContent,
@@ -94,6 +95,7 @@ export function LinkPreview({
             className={className}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
+            onClick={stopPropagation}
           >
             {children}
           </NextLink>
@@ -120,6 +122,7 @@ export function LinkPreview({
                     rel={isExternal ? 'noopener noreferrer' : undefined}
                     style={{ fontSize: 0 }}
                     className="block rounded-lg border-2 border-border bg-card shadow transition-colors hover:border-muted dark:bg-card dark:hover:border-muted-foreground"
+                    onClick={stopPropagation}
                   >
                     <Image
                       priority
