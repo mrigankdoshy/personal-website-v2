@@ -25,31 +25,39 @@ export function AboutMe() {
             projects, continually honing my skills along the way.
           </BlurRevealContent>
         </p>
-        <p>
+        <span>
           <BlurRevealContent>
             Originally from the small tropical state of{' '}
             <Link href="https://g.co/kgs/cjBeBpD">Goa</Link>, I grew up
             surrounded by its rich heritage and sun-kissed beaches, both of
             which hold a{' '}
-            <Link href="https://www.youtube.com/watch?v=Cyo0IiXYIvI" underline>
+            <Link
+              href="https://www.youtube.com/watch?v=Cyo0IiXYIvI"
+              underline
+              enablePreview
+            >
               special place in my heart
             </Link>
             .
           </BlurRevealContent>
-        </p>
-        <p>
+        </span>
+        <span>
           <BlurRevealContent>
             I studied Computer Science and Mathematics at{' '}
             <Link href="https://www.psu.edu">Penn State</Link>, where I
             developed a passion for entrepreneurship and building products. The{' '}
-            <Link href="https://www.youtube.com/watch?v=D8591xRMIv8" underline>
+            <Link
+              href="https://www.youtube.com/watch?v=D8591xRMIv8"
+              underline
+              enablePreview
+            >
               college-town charm of State College
             </Link>{' '}
             left a lasting impact on me, and I proudly carry the Nittany Lion
             spirit with me. Now, I call{' '}
             <Link href="https://g.co/kgs/sdLx9w8">Washington, DC</Link>, home.
           </BlurRevealContent>
-        </p>
+        </span>
         <p>
           <BlurRevealContent>
             Since then, I&apos;ve focused on crafting sustainable, impactful

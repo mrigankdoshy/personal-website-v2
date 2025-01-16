@@ -21,13 +21,14 @@ export const workExperiences: WorkExperience[] = [
     role: 'Software Engineer II',
     company: 'KCF Technologies',
     description: (
-      <>
+      <span>
         <BlurRevealContent>
           I currently lead the development of a new cross-platform mobile app
           for KCF&apos;s{' '}
           <Link
             href="https://kcftech.com/solutions/smartdiagnostics/"
             underline
+            enablePreview
           >
             machine health monitoring platform
           </Link>{' '}
@@ -45,7 +46,7 @@ export const workExperiences: WorkExperience[] = [
           also helped develop a unified design system to maintain consistency
           and efficiency across all applications.
         </BlurRevealContent>
-      </>
+      </span>
     ),
     tags: [
       { label: 'React', href: 'https://react.dev' },
@@ -82,6 +83,7 @@ export const workExperiences: WorkExperience[] = [
         <Link
           href="https://sites.psu.edu/lfshowcasesp21/2021/04/29/routing-productivity-improvement/"
           underline
+          enablePreview
         >
           project
         </Link>{' '}
@@ -104,7 +106,7 @@ export const workExperiences: WorkExperience[] = [
     role: 'Co-Founder and Software Engineer',
     company: 'Mule',
     description: (
-      <>
+      <span>
         <BlurRevealContent>
           Built and launched a peer-to-peer delivery platform, that empowered
           students to be one another&apos;s service providers while efficiently
@@ -112,6 +114,7 @@ export const workExperiences: WorkExperience[] = [
           <Link
             href="https://apps.apple.com/us/app/mule-delivery/id1554136114"
             underline
+            enablePreview
           >
             iOS
           </Link>{' '}
@@ -119,6 +122,7 @@ export const workExperiences: WorkExperience[] = [
           <Link
             href="https://play.google.com/store/apps/details?id=com.themuleapp.app"
             underline
+            enablePreview
           >
             Android
           </Link>{' '}
@@ -134,7 +138,7 @@ export const workExperiences: WorkExperience[] = [
           validating customer needs, refining the product, and driving its
           strategic growth through technical innovation and market insights.
         </BlurRevealContent>
-      </>
+      </span>
     ),
     tags: [
       { label: 'Flutter', href: 'https://flutter.dev' },
@@ -160,7 +164,7 @@ export const workExperiences: WorkExperience[] = [
         fostering FinTech and blockchain skills through hands-on projects and
         strategic initiatives. Spearheaded partnerships, taught an official
         blockchain course, and established a vibrant blockchain community at{' '}
-        <Link href="https://psu.edu" underline>
+        <Link href="https://psu.edu" underline enablePreview>
           Penn State
         </Link>
         .

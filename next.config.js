@@ -10,13 +10,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'mrigankdoshy-personal-website-v2.vercel.app',
+        hostname: 'mrigankdoshy-v2.vercel.app',
       },
       {
         protocol: 'https',
         hostname: 'mrigankdoshy.com',
       },
     ],
+    domains: ['api.microlink.io'],
   },
 };
 
