@@ -1,4 +1,6 @@
 import { StaticImageData } from 'next/image';
+import AirPods from 'public/images/airpods.png';
+import Bottega from 'public/images/bottega.jpg';
 import Copilot from 'public/images/copilot.jpg';
 import IOU from 'public/images/iou.jpg';
 import Robinhood from 'public/images/robinhood.png';
@@ -147,4 +149,44 @@ export const gear: Gear[] = [
       "'4M6HBY', 2 months free. Still new to the app but seems great for personal finance.",
     link: 'https://copilot.money/link/EPdV8p9sAqtmL1KG6',
   },
+  {
+    name: 'MacBook Pro - M3 Pro',
+    category: 'Everyday Carry',
+    description: 'Daily driver. Sleek, powerful, and intuitive.',
+    image:
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spaceblack-gallery4-202410?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=1729264978259',
+    link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb',
+  },
+  {
+    name: 'Apple - AirPods Pro 2',
+    category: 'Everyday Carry',
+    image: AirPods,
+    description:
+      'Wireless earphones with active noise cancellation, adaptive audio, conversation awareness and more.',
+    link: 'https://www.apple.com/airpods-pro/',
+  },
+  {
+    name: 'Apple - AirTag',
+    category: 'Everyday Carry',
+    description: 'Track my keys, wallet, backpack, and more.',
+    image:
+      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=890&hei=740&fmt=jpeg&qlt=90&.v=1617761672000',
+    link: 'https://www.apple.com/airtag/',
+  },
+  {
+    name: 'Bottega Veneta - Flap Card Case',
+    category: 'Everyday Carry',
+    description:
+      'Intrecciato leather card case, perfect for carrying upto 8 cards.',
+    image: Bottega,
+    link: 'https://www.bottegaveneta.com/en-us/flap-card-case-space-813351120.html',
+  },
+  // {
+  //   name: 'Samsung T7 Shield SSD',
+  //   category: 'Other',
+  //   description:
+  //     'Fast, reliable, and secure storage. To edit videos on the go.',
+  //   image: 'https://m.media-amazon.com/images/I/61MDz7gI-zL._AC_SL1500_.jpg',
+  //   link: 'https://amzn.to/3vwoD03',
+  // },
 ];

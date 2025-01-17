@@ -21,7 +21,7 @@ export function Gear() {
         <p className="max-w-lg text-pretty text-muted-foreground">
           <BlurRevealContent>
             A curated collection of apps, tools, and essentials I personally use
-            and recommend to create, build, and stay productive.
+            and recommend to create, stay productive, and feel good about.
           </BlurRevealContent>
         </p>
       </div>
