@@ -14,14 +14,14 @@ export function Gear() {
           </h1>
           <p className="text-muted-foreground">
             <BlurRevealContent>
-              Everything I use to create, build, and stay productive.
+              A glimpse into the gear I trust every day.
             </BlurRevealContent>
           </p>
         </div>
         <p className="max-w-lg text-pretty text-muted-foreground">
           <BlurRevealContent>
-            My trusted gear - a curated collection of apps, tools, and
-            essentials I personally use and recommend.
+            A curated collection of apps, tools, and essentials I personally use
+            and recommend to create, build, and stay productive.
           </BlurRevealContent>
         </p>
       </div>

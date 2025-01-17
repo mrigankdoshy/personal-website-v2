@@ -21,6 +21,11 @@ const nextConfig = {
       'api.microlink.io',
       'elephantdesks.com',
       'www.nordikbydesign.com',
+      'grovemade.imgix.net',
+      'store.storeimages.cdn-apple.com',
+      'm.media-amazon.com',
+      'www.branchfurniture.com',
+      'cdn.shopify.com',
     ],
   },
 };
