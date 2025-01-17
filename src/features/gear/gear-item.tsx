@@ -9,13 +9,13 @@ export function GearItem({ name, description, image, link }: GearItemProps) {
       <a
         href={link}
         target="_blank"
-        className="bg-tertiary relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl border border-primary"
+        className="bg-tertiary relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl border border-secondary"
       >
         <Image
           fill
           alt={name}
           src={image}
-          className="h-full w-full overflow-hidden rounded-xl object-cover object-center"
+          className="h-full w-full overflow-hidden rounded-lg object-cover object-center"
         />
       </a>
       <div className="flex grow items-center justify-between gap-2">

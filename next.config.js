@@ -16,16 +16,46 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'mrigankdoshy.com',
       },
-    ],
-    domains: [
-      'api.microlink.io',
-      'elephantdesks.com',
-      'www.nordikbydesign.com',
-      'grovemade.imgix.net',
-      'store.storeimages.cdn-apple.com',
-      'm.media-amazon.com',
-      'www.branchfurniture.com',
-      'cdn.shopify.com',
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'elephantdesks.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.nordikbydesign.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'grovemade.imgix.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'store.storeimages.cdn-apple.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.branchfurniture.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.rocketsim.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+      },
     ],
   },
 };

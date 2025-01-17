@@ -1,4 +1,8 @@
 import { StaticImageData } from 'next/image';
+import Copilot from 'public/images/copilot.jpg';
+import IOU from 'public/images/iou.jpg';
+import Robinhood from 'public/images/robinhood.png';
+import Warp from 'public/images/warp.png';
 
 type Category = 'Apps' | 'Desk Setup' | 'Everyday Carry' | 'Other';
 
@@ -95,232 +99,52 @@ export const gear: Gear[] = [
       'https://cdn.shopify.com/s/files/1/0384/6721/files/856500012162_A.jpg?v=1687282088&width=3000&height=3000&crop=center',
     link: 'https://nomadgoods.com/products/base-station-hub',
   },
-  // {
-  //   name: 'Apple Magic Trackpad',
-  //   category: 'Home Desk Setup',
-  //   description: 'The go-to trackpad for my MacBook Pro. Great for gestures.',
-  //   image: 'https://m.media-amazon.com/images/I/41KZtzhlK+L._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3vrq148',
-  // },
-  // {
-  //   name: 'Superhuman Mail',
-  //   category: 'Apps',
-  //   image: Superhuman,
-  //   description:
-  //     'Use link for 1 Month FREE code. The fastest email experience with cool AI features.',
-  //   link: 'https://superhuman.com/refer/bspuaqpo',
-  // },
-  // {
-  //   name: 'Raycast',
-  //   category: 'Apps',
-  //   description:
-  //     'The quickest way to get things done on your Mac. Using Raycast daily.',
-  //   image: Raycast,
-  //   link: 'https://raycast.com/?via=brianruiz',
-  // },
-  // {
-  //   name: 'Epidemic Sound',
-  //   category: 'Apps',
-  //   image: EpidemicSound,
-  //   description:
-  //     '1 Month Free. This is where I get 95% of the music for my videos. Skip the hassle that is licensing.',
-  //   link: 'https://share.epidemicsound.com/j2d0ao',
-  // },
-  // {
-  //   name: 'Copilot Money',
-  //   category: 'Apps',
-  //   image: Copilot,
-  //   description:
-  //     "'BRIANRUIZ', 2 months FREE. For all things personal finance, this is a must.",
-  //   link: 'https://copilot.money/link/cxkfRAoUGeybxipT7',
-  // },
-  // {
-  //   name: 'MacroFactor',
-  //   category: 'Apps',
-  //   description:
-  //     "code 'brianruiz' for extended trial. I use this to stay on top of my diet.",
-  //   image: Macrofactor,
-  //   link: 'https://macrofactorapp.com/',
-  // },
-  // {
-  //   name: 'Sony Cinema Line FX3',
-  //   category: 'Camera Setup (Video)',
-  //   image:
-  //     'https://m.media-amazon.com/images/I/81lVg8e3bHL.__AC_SY300_SX300_QL70_FMwebp_.jpg',
-  //   description:
-  //     'Dream camera, 4k 10bit, built-in cooling, and great low light performance.',
-  //   link: 'https://amzn.to/3TR2lzz',
-  // },
-  // {
-  //   name: 'Sony 24-70mm f/2.8 GM II',
-  //   category: 'Camera Setup (Video)',
-  //   description:
-  //     'Super versatile and high quality glass. Great investment for a cinematic lens.',
-  //   image: 'https://m.media-amazon.com/images/I/71i0q2J-iEL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3TABciO',
-  // },
-  // {
-  //   name: 'Peak Design Carbon Fiber Tripod',
-  //   category: 'Camera Setup (Video)',
-  //   description: 'Compact, lightweight, sturdy, and good looking.',
-  //   image: 'https://m.media-amazon.com/images/I/818QVv6AzPL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/43CoF31',
-  // },
-  // {
-  //   name: 'Sennheiser MKE 600',
-  //   category: 'Camera Setup (Video)',
-  //   image: 'https://m.media-amazon.com/images/I/51tVQAKlvJL._AC_SL1200_.jpg',
-  //   description:
-  //     'My go-to XLR shotgun microphone for my videos and voice-overs.',
-  //   link: 'https://amzn.to/3Dm3z1m',
-  // },
-  // {
-  //   name: 'DJI Mic, Wireless Lavalier Microphone',
-  //   category: 'Camera Setup (Video)',
-  //   description: 'Great for on-the-go vlogging and voice-overs. In-frame.',
-  //   image: 'https://m.media-amazon.com/images/I/71jTh1T3jGL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/4cuVVxj',
-  // },
-  // {
-  //   name: 'GoPro HERO10 Black action camera',
-  //   category: 'Other',
-  //   image: 'https://m.media-amazon.com/images/I/61p2fYdYP+L._AC_SX679_.jpg',
-  //   description: 'Awesome for action video, I use it for my POV shots.',
-  //   link: 'https://amzn.to/3exkZuq',
-  // },
-  // {
-  //   name: 'PolarPro Peter McKinnon Variable ND Filter 2-5 Stop',
-  //   category: 'Camera Setup (Video)',
-  //   description:
-  //     'Necessary for FX3 at base ISO, control exposure, and motion blur.',
-  //   image: 'https://m.media-amazon.com/images/I/61CdnSGKaAL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3TSAJdg',
-  // },
-  // {
-  //   name: 'Tiffen Black Pro-Mist 1/8 Filter',
-  //   category: 'Camera Setup (Video)',
-  //   description:
-  //     'Subtly Softens image. Reduces highlights and contrast, great for skin.',
-  //   image:
-  //     'https://m.media-amazon.com/images/I/51uqnCKf2WL.__AC_SY300_SX300_QL70_FMwebp_.jpg',
-  //   link: 'https://amzn.to/4cyEUSJ',
-  // },
-  // {
-  //   name: 'Sony a7C II',
-  //   category: 'Camera Setup (Photo)',
-  //   description:
-  //     'Compact lightweight full-frame camera, flip screen, 4k, 33MP, b-roll camera.',
-  //   image: 'https://m.media-amazon.com/images/I/61O5jFfqbSL._AC_SL1000_.jpg',
-  //   link: 'https://amzn.to/3TQbJmO',
-  // },
-  // {
-  //   name: 'Sony 40mm f/2.5 G Lens',
-  //   category: 'Camera Setup (Photo)',
-  //   description:
-  //     'Ultra-compact fast prime w/ G series lens quality and performance.',
-  //   image: 'https://m.media-amazon.com/images/I/81Yq6eLrf2L._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3YTBdCz',
-  // },
-  // {
-  //   name: 'Peak Design Leash Camera Strap',
-  //   category: 'Camera Setup (Photo)',
-  //   description: 'Quick-connecting, ultra-light, and compact camera strap.',
-  //   image: 'https://m.media-amazon.com/images/I/71DytxHtVaL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3VFfptf',
-  // },
-  // {
-  //   name: 'Urth Arkose Modular Camera Backpack',
-  //   category: 'Everyday Carry',
-  //   image: 'https://m.media-amazon.com/images/I/81AY7f9OwnL._AC_SL1500_.jpg',
-  //   description: 'Compact Camera Backpack - A Minimalist & Travel-friendly',
-  //   link: 'https://m.media-amazon.com/images/I/71Qpc9j5JiL._AC_SL1500_.jpg',
-  // },
-  // {
-  //   name: 'Suptig Chest Mount for GoPro',
-  //   category: 'Other',
-  //   image: 'https://m.media-amazon.com/images/I/81y-UqVnYAL._AC_SL1500_.jpg',
-  //   description: 'This is how I record my POV bike rides! :)',
-  //   link: 'https://amzn.to/3DonSG9',
-  // },
-  // {
-  //   name: 'DJI Mini 3 Pro Drone',
-  //   category: 'Other',
-  //   description: 'A great DJI drone for beginners, and a great vlogging tool.',
-  //   image:
-  //     'https://m.media-amazon.com/images/I/61Y1P6uIRFL.__AC_SX300_SY300_QL70_FMwebp_.jpg',
-  //   link: 'https://amzn.to/3mdZenf',
-  // },
-  // {
-  //   name: 'DJI RS 3 Mini Gimbal',
-  //   category: 'Other',
-  //   description: 'small footprint and portable.',
-  //   image: 'https://m.media-amazon.com/images/I/51owwMmtiBL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/40LPcJa',
-  // },
-  // // {
-  // //   name: "HP DisplayLink Hub",
-  // //   category: "Office Desk Setup",
-  // //   image: "https://m.media-amazon.com/images/I/51Akvh02nDL._AC_SL1280_.jpg",
-  // //   description: "A hub that enables dual monitors on M1 MBP.",
-  // //   link: "https://amzn.to/3UnTbJo",
-  // // },
-  // // {
-  // //   name: "Dell UltraSharp U2722D",
-  // //   category: "Office Desk Setup",
-  // //   link: "https://amzn.to/3KLucN1",
-  // //   image: "https://m.media-amazon.com/images/I/81siJZnLDaL._AC_SL1500_.jpg",
-  // //   description: "A 27 inch 4K monitor",
-  // // },
-  // // {
-  // //   name: "VIVO Dual Monitor Stand",
-  // //   category: "Office Desk Setup",
-  // //   link: "https://amzn.to/40U0jzC",
-  // //   image: "https://m.media-amazon.com/images/I/61JPGtCI0GL._AC_SL1500_.jpg",
-  // //   description: "White articulating pneumatic monitor stand",
-  // // },
-  // {
-  //   name: 'MacBook Pro M1 Pro 16-inch',
-  //   category: 'Everyday Carry',
-  //   image: 'https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_SL1500_.jpg',
-  //   description: 'Daily driver. Sleek, great display, and performant.',
-  //   link: 'https://amzn.to/41fkhEH',
-  // },
-  // {
-  //   name: 'Apple AirPods Max',
-  //   category: 'Everyday Carry',
-  //   image: 'https://m.media-amazon.com/images/I/81OdA-ITspL._AC_SL1500_.jpg',
-  //   description: 'Active Noise Cancelling, Transparency Mode, Spatial Audio',
-  //   link: 'https://amzn.to/3mie64b',
-  // },
-  // {
-  //   name: 'Apple AirPods Pro',
-  //   category: 'Everyday Carry',
-  //   image:
-  //     'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83_AV5?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803961739',
-  //   description:
-  //     'Wireless Earbuds, Up to 2X More Active Noise Cancelling, Adaptive Transparency.',
-  //   link: 'https://amzn.to/3UmMQhq',
-  // },
-  // {
-  //   name: 'Apple AirTag',
-  //   category: 'Everyday Carry',
-  //   image: 'https://m.media-amazon.com/images/I/81Lq1AfCYpS._AC_SL1500_.jpg',
-  //   description: 'Track your keys, wallet, backpack, and more.',
-  //   link: 'https://amzn.to/41dXoSa',
-  // },
-  // {
-  //   name: 'Orbitkey Key Organizer',
-  //   category: 'Everyday Carry',
-  //   description: 'Carry your keys in a neat and organized way.',
-  //   image: 'https://m.media-amazon.com/images/I/61myalb0+DL._AC_SY879_.jpg',
-  //   link: 'https://amzn.to/49clTTh',
-  // },
-  // {
-  //   name: 'Samsung T7 Shield SSD',
-  //   category: 'Other',
-  //   description:
-  //     'Fast, reliable, and secure storage. To edit videos on the go.',
-  //   image: 'https://m.media-amazon.com/images/I/61MDz7gI-zL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3vwoD03',
-  // },
+  {
+    name: 'Warp',
+    category: 'Apps',
+    description:
+      "Best terminal I've used, with so many quality of life features. Keeps me in flow every day.",
+    image: Warp,
+    link: 'https://app.warp.dev/referral/J9MZ3Y',
+  },
+  {
+    name: 'RocketSim',
+    category: 'Apps',
+    description:
+      'Powerful Xcode Simulator tools such as network monitor, airplane mode, permission management and much more.',
+    image: 'https://www.rocketsim.app/Assets/rocketsim-app-icon.png',
+    link: 'https://www.rocketsim.app',
+  },
+  {
+    name: 'Flighty',
+    category: 'Apps',
+    description:
+      "Beautifully designed flight tracking app. I've had all my close friends download it.",
+    image:
+      'https://framerusercontent.com/images/DGjxvlg0VSQZq0uuXVMtDHjYyU.png',
+    link: 'https://flighty.com',
+  },
+  {
+    name: 'Robinhood',
+    category: 'Apps',
+    description: 'Free stock with my link. Seamless for personal investments.',
+    image: Robinhood,
+    link: 'https://join.robinhood.com/mrigand',
+  },
+  {
+    name: 'IOU - Split Tab',
+    category: 'Apps',
+    description:
+      'Hidden gem that helps split receipts between friends. Huge time saver.',
+    image: IOU,
+    link: 'https://apps.apple.com/us/app/iou-easily-split-your-tab/id1589968294',
+  },
+  {
+    name: 'Copilot Money',
+    category: 'Apps',
+    image: Copilot,
+    description:
+      "'4M6HBY', 2 months free. Still new to the app but seems great for personal finance.",
+    link: 'https://copilot.money/link/EPdV8p9sAqtmL1KG6',
+  },
 ];
