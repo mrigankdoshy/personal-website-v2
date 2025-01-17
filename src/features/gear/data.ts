@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 import AirPods from 'public/images/airpods.png';
+import AppleWatch from 'public/images/apple-watch.jpg';
 import Bottega from 'public/images/bottega.jpg';
 import Copilot from 'public/images/copilot.jpg';
 import IOU from 'public/images/iou.jpg';
@@ -158,7 +159,7 @@ export const gear: Gear[] = [
     link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb',
   },
   {
-    name: 'Apple - AirPods Pro 2',
+    name: 'Apple AirPods Pro 2',
     category: 'Everyday Carry',
     image: AirPods,
     description:
@@ -166,12 +167,20 @@ export const gear: Gear[] = [
     link: 'https://www.apple.com/airpods-pro/',
   },
   {
-    name: 'Apple - AirTag',
+    name: 'Apple AirTag',
     category: 'Everyday Carry',
     description: 'Track my keys, wallet, backpack, and more.',
     image:
       'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=890&hei=740&fmt=jpeg&qlt=90&.v=1617761672000',
     link: 'https://www.apple.com/airtag/',
+  },
+  {
+    name: 'Apple Watch - Series 9',
+    category: 'Everyday Carry',
+    description:
+      'Stylish, all-in-one tool for health tracking, productivity, and staying connected.',
+    image: AppleWatch,
+    link: 'https://www.apple.com/watch/',
   },
   {
     name: 'Bottega Veneta - Flap Card Case',
@@ -181,12 +190,4 @@ export const gear: Gear[] = [
     image: Bottega,
     link: 'https://www.bottegaveneta.com/en-us/flap-card-case-space-813351120.html',
   },
-  // {
-  //   name: 'Samsung T7 Shield SSD',
-  //   category: 'Other',
-  //   description:
-  //     'Fast, reliable, and secure storage. To edit videos on the go.',
-  //   image: 'https://m.media-amazon.com/images/I/61MDz7gI-zL._AC_SL1500_.jpg',
-  //   link: 'https://amzn.to/3vwoD03',
-  // },
 ];
