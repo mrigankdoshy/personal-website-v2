@@ -22,6 +22,10 @@ const links = [
     path: '/projects',
     title: 'Projects',
   },
+  {
+    path: '/gear',
+    title: 'Gear',
+  },
 ] as const;
 
 export function Navigation() {

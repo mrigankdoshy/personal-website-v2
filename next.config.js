@@ -17,7 +17,11 @@ const nextConfig = {
         hostname: 'mrigankdoshy.com',
       },
     ],
-    domains: ['api.microlink.io'],
+    domains: [
+      'api.microlink.io',
+      'elephantdesks.com',
+      'www.nordikbydesign.com',
+    ],
   },
 };
 
