@@ -15,7 +15,7 @@ export async function GET() {
 
   try {
     const response = await fetch(
-      `https://api.vercel.com/v6/deployments?teamId=${VERCEL_TEAM_ID}&projectId=${VERCEL_PROJECT_ID}&limit=1&state=READY`,
+      `https://api.vercel.com/v6/deployments?teamId=${VERCEL_TEAM_ID}&projectId=${VERCEL_PROJECT_ID}&limit=1&state=READY&target=production`,
       {
         headers: {
           Authorization: `Bearer ${VERCEL_TOKEN}`,
