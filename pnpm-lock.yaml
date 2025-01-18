@@ -32,6 +32,12 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.1
         version: 1.1.1(@types/react@19.0.2)(react@19.0.0)
+      '@tanstack/react-query':
+        specifier: ^5.64.1
+        version: 5.64.1(react@19.0.0)
+      '@tanstack/react-query-devtools':
+        specifier: ^5.64.1
+        version: 5.64.1(@tanstack/react-query@5.64.1(react@19.0.0))(react@19.0.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -798,6 +804,23 @@ packages:
     resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
+  '@tanstack/query-core@5.64.1':
+    resolution: {integrity: sha512-978Wx4Wl4UJZbmvU/rkaM9cQtXXrbhK0lsz/UZhYIbyKYA8E4LdomTwyh2GHZ4oU0BKKoDH4YlKk2VscCUgNmg==}
+
+  '@tanstack/query-devtools@5.62.16':
+    resolution: {integrity: sha512-3ff6UBJr0H3nIhfLSl9911rvKqXf0u4B58jl0uYdDWLqPk9pCvYIbxC35cGxK2+8INl4IaFVUHb/IdgWrNkg3Q==}
+
+  '@tanstack/react-query-devtools@5.64.1':
+    resolution: {integrity: sha512-8ajcGE3wXYlb4KuJnkFYkJwJKc/qmPNTpQD7YTgLRMBPTGGp1xk7VMzxL87DoXuweO8luplUUblJJ3noVs/luQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.64.1
+      react: ^18 || ^19
+
+  '@tanstack/react-query@5.64.1':
+    resolution: {integrity: sha512-vW5ggHpIO2Yjj44b4sB+Fd3cdnlMJppXRBJkEHvld6FXh3j5dwWJoQo7mGtKI2RbSFyiyu/PhGAy0+Vv5ev9Eg==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
@@ -3376,6 +3399,21 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17
+
+  '@tanstack/query-core@5.64.1': {}
+
+  '@tanstack/query-devtools@5.62.16': {}
+
+  '@tanstack/react-query-devtools@5.64.1(@tanstack/react-query@5.64.1(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-devtools': 5.62.16
+      '@tanstack/react-query': 5.64.1(react@19.0.0)
+      react: 19.0.0
+
+  '@tanstack/react-query@5.64.1(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.64.1
+      react: 19.0.0
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:

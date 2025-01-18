@@ -1,5 +1,6 @@
 'use client';
 
+import { useLastUpdated } from '@/features/navigation/use-last-updated';
 import { Link } from '@/shared/ui/link';
 import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,12 +9,16 @@ import { motion } from 'motion/react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // TODO: Replace with Vercel deployment date
-  const lastUpdated = new Date().toLocaleString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const { data: lastUpdated, isLoading, isError } = useLastUpdated();
+
+  const formattedLastUpdated = lastUpdated
+    ? lastUpdated.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+      })
+    : 'Unknown';
 
   return (
     <motion.footer
@@ -40,7 +45,12 @@ export function Footer() {
             transition={{ delay: 0.4 }}
           >
             <FontAwesomeIcon icon={faCodeBranch} />
-            Updated: {lastUpdated}
+            Updated:{' '}
+            {isLoading
+              ? 'Loading...'
+              : isError
+                ? 'Error fetching update time'
+                : formattedLastUpdated}
           </motion.p>
         </Link>
       </div>

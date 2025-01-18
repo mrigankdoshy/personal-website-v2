@@ -1,5 +1,6 @@
 import { Footer } from '@/features/navigation/footer';
 import { Navigation } from '@/features/navigation/navigation';
+import { QueryClientProvider } from '@/features/query/query-client-provider';
 import { ThemeProvider } from '@/features/theme/theme-provider';
 import { siteConfig } from '@/shared/config/site-config';
 import '@/shared/styles/globals.css';
@@ -63,13 +64,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <Navigation />
-          <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <QueryClientProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <Navigation />
+            <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );
