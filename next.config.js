@@ -10,11 +10,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'mrigankdoshy.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.mrigankdoshy.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'mrigankdoshy-v2.vercel.app',
       },
       {
         protocol: 'https',
-        hostname: 'mrigankdoshy.com',
+        hostname: 'www.mrigankdoshy-v2.vercel.app',
       },
       {
         protocol: 'https',
