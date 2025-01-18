@@ -28,7 +28,7 @@ export const projects: Project[] = [
     title: 'Personal Website v1',
     description:
       'A personal portfolio website built using Flutter and hosted with Vercel',
-    url: 'https://github.com/mrigankdoshy/personal-website/',
+    url: 'https://github.com/mrigankdoshy/personal-website-v1/',
     tags: ['Flutter', 'Vercel'],
   },
   {
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: 'Personal Website v2',
     description:
       'v2 of my personal portfolio website, built using Next.js and hosted with Vercel',
-    url: 'https://github.com/mrigankdoshy/personal-website/',
+    url: 'https://github.com/mrigankdoshy/personal-website-v2/',
     tags: ['Next.js', 'Tailwind', 'Framer Motion'],
   },
   {
