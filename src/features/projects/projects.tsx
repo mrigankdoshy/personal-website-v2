@@ -1,6 +1,6 @@
 'use client';
 
-import { projects } from '@/features/projects/data.json';
+import { projects } from '@/features/projects/data';
 import { ProjectCard } from '@/features/projects/project-card';
 import { useMasonry } from '@/features/projects/useMasonry';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
