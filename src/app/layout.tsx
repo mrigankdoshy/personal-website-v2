@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/features/theme/theme-provider';
 import { siteConfig } from '@/shared/config/site-config';
 import '@/shared/styles/globals.css';
 import { cn } from '@/shared/utils/cn';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Footer />
           </ThemeProvider>
         </QueryClientProvider>
+        <Analytics />
       </body>
     </html>
   );
