@@ -12,7 +12,7 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
   </a>
-  <img src="https://img.shields.io/github/v/release/mrigankdoshy/personal-website-v2?color=blue&include_prereleases&sort=date&style=for-the-badge" alt="Release">
+  <img src="https://img.shields.io/github/v/release/mrigankdoshy/personal-website-v2?color=blue&sort=date&style=for-the-badge" alt="Release">
 </p>
 
 ## 👩🏻‍💻 Tech Stack
