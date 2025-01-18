@@ -1,3 +1,4 @@
+import { Footer } from '@/features/navigation/footer';
 import { Navigation } from '@/features/navigation/navigation';
 import { ThemeProvider } from '@/features/theme/theme-provider';
 import { siteConfig } from '@/shared/config/site-config';
@@ -57,13 +58,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn('bg-background font-sans antialiased', fontSans.variable)}
+        className={cn(
+          'flex min-h-screen flex-col bg-background font-sans antialiased',
+          fontSans.variable
+        )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Navigation />
-          <div className="mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-44 md:pt-20">
+          <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
             {children}
-          </div>
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
