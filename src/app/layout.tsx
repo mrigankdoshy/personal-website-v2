@@ -1,3 +1,4 @@
+import { DragConstraintsProvider } from '@/features/about/drag-constraints-provider';
 import { Footer } from '@/features/navigation/footer';
 import { Navigation } from '@/features/navigation/navigation';
 import { QueryClientProvider } from '@/features/query/query-client-provider';
@@ -67,11 +68,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <QueryClientProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
-            <Navigation />
-            <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
-              {children}
-            </main>
-            <Footer />
+            <DragConstraintsProvider>
+              <Navigation />
+              <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
+                {children}
+              </main>
+              <Footer />
+            </DragConstraintsProvider>
           </ThemeProvider>
         </QueryClientProvider>
         <Analytics />

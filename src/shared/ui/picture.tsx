@@ -1,5 +1,6 @@
 'use client';
 
+import { useDragConstraints } from '@/features/about/drag-constraints-provider';
 import { GlowEffect } from '@/shared/ui/glow-effect';
 import { cn } from '@/shared/utils/cn';
 import { motion } from 'motion/react';
@@ -50,11 +51,14 @@ export function Picture({
   meta,
   children,
 }: PictureProps) {
+  const constraintsRef = useDragConstraints();
+
   const fileName = useMemo(() => getFilename(src, filename), [filename, src]);
 
   return (
     <motion.div
       drag
+      dragConstraints={constraintsRef}
       className="absolute mx-auto cursor-grab hover:before:absolute hover:before:-left-7 hover:before:-top-8 hover:before:block hover:before:h-[300px] hover:before:w-[calc(100%+55px)]"
       style={{ rotate: `${rotate}deg`, left, width, height, perspective: 1000 }}
       animate={{ width, height, rotate, y: 0, opacity: 1, x: 0 }}
