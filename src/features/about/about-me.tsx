@@ -32,7 +32,7 @@ export function AboutMe() {
             surrounded by its rich heritage and sun-kissed beaches, both of
             which hold a{' '}
             <Link
-              href="https://www.youtube.com/watch?v=Cyo0IiXYIvI"
+              href="https://youtube.com/watch?v=Cyo0IiXYIvI"
               underline
               enablePreview
             >
@@ -44,10 +44,10 @@ export function AboutMe() {
         <span>
           <BlurRevealContent>
             I studied Computer Science and Mathematics at{' '}
-            <Link href="https://www.psu.edu">Penn State</Link>, where I
-            developed a passion for entrepreneurship and building products. The{' '}
+            <Link href="https://psu.edu">Penn State</Link>, where I developed a
+            passion for entrepreneurship and building products. The{' '}
             <Link
-              href="https://www.youtube.com/watch?v=D8591xRMIv8"
+              href="https://youtube.com/watch?v=D8591xRMIv8"
               underline
               enablePreview
             >

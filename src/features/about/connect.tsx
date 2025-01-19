@@ -30,7 +30,7 @@ const connectLink: ConnectLink[] = [
   {
     label: 'Instagram',
     subtitle: 'mrigankdoshy',
-    href: 'https://www.instagram.com/mrigankdoshy/',
+    href: 'https://instagram.com/mrigankdoshy/',
     icon: <FontAwesomeIcon icon={faInstagram} />,
   },
   {
@@ -42,7 +42,7 @@ const connectLink: ConnectLink[] = [
   {
     label: 'LinkedIn',
     subtitle: 'in/mrigankdoshy',
-    href: 'https://www.linkedin.com/in/mrigankdoshy/',
+    href: 'https://linkedin.com/in/mrigankdoshy/',
     icon: <FontAwesomeIcon icon={faLinkedin} />,
   },
   {

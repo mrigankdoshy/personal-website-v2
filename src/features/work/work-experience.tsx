@@ -51,7 +51,7 @@ export const workExperiences: WorkExperience[] = [
     tags: [
       { label: 'React', href: 'https://react.dev' },
       { label: 'React Native', href: 'https://reactnative.dev' },
-      { label: 'TypeScript', href: 'https://www.typescriptlang.org' },
+      { label: 'TypeScript', href: 'https://typescriptlang.org' },
       { label: 'Expo', href: 'https://expo.dev' },
       {
         label: 'Native iOS & Android',
@@ -66,7 +66,7 @@ export const workExperiences: WorkExperience[] = [
   },
   {
     id: 'volvo',
-    href: 'https://www.volvotrucks.us',
+    href: 'https://volvotrucks.us',
     date: '2021 - 2021',
     role: 'Software Engineer - Capstone Project',
     company: 'Volvo',
@@ -74,7 +74,7 @@ export const workExperiences: WorkExperience[] = [
       <BlurRevealContent>
         Developed an automated solution to streamline the conversion of 2D
         schematics into 3D CAD models in{' '}
-        <Link href="https://www.ptc.com/en/products/creo/parametric">
+        <Link href="https://ptc.com/en/products/creo/parametric">
           Creo Parametric
         </Link>
         , eliminating manual updates. Also designed an algorithm to optimize
@@ -92,10 +92,10 @@ export const workExperiences: WorkExperience[] = [
       </BlurRevealContent>
     ),
     tags: [
-      { label: 'Python', href: 'https://www.python.org' },
+      { label: 'Python', href: 'https://python.org' },
       {
         label: 'Creo Parametric',
-        href: 'https://www.ptc.com/en/products/creo/parametric',
+        href: 'https://ptc.com/en/products/creo/parametric',
       },
     ],
   },
@@ -144,7 +144,7 @@ export const workExperiences: WorkExperience[] = [
       { label: 'Flutter', href: 'https://flutter.dev' },
       { label: 'Express', href: 'https://expressjs.com' },
       { label: 'MobX', href: 'https://mobx.js.org' },
-      { label: 'MongoDB', href: 'https://www.mongodb.com' },
+      { label: 'MongoDB', href: 'https://mongodb.com' },
       { label: 'Firebase', href: 'https://firebase.google.com' },
       {
         label: 'Google Maps Platform',

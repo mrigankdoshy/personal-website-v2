@@ -41,8 +41,8 @@ export const gear: Gear[] = [
     description:
       'Perfect to use both my laptops in clam-shell mode, keeping my workspace efficient and tidy.',
     image:
-      'https://www.nordikbydesign.com/cdn/shop/products/Nordik-23319.jpg?v=1692357315&width=1346',
-    link: 'https://www.nordikbydesign.com/products/laptop-dock-holder?variant=42789492654273',
+      'https://nordikbydesign.com/cdn/shop/products/Nordik-23319.jpg?v=1692357315&width=1346',
+    link: 'https://nordikbydesign.com/products/laptop-dock-holder?variant=42789492654273',
   },
   {
     name: 'Nordik - Desk Shelf',
@@ -50,8 +50,8 @@ export const gear: Gear[] = [
     description:
       'Acacia hardwood desk shelf that elevates screens for a comfortable, ergonomic neck position.',
     image:
-      'https://www.nordikbydesign.com/cdn/shop/files/side-of-desk_6a66cef2-4809-4909-b339-19e0f042fefc.jpg?v=1692250378&width=1500',
-    link: 'https://www.nordikbydesign.com/products/dual-monitor-riser',
+      'https://nordikbydesign.com/cdn/shop/files/side-of-desk_6a66cef2-4809-4909-b339-19e0f042fefc.jpg?v=1692250378&width=1500',
+    link: 'https://nordikbydesign.com/products/dual-monitor-riser',
   },
   {
     name: 'Grovemade - The Desk Pad',
@@ -68,7 +68,7 @@ export const gear: Gear[] = [
     description: 'The go-to mouse for my MacBook Pro. Great for gestures.',
     image:
       'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MXK53?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1730508286345',
-    link: 'https://www.apple.com/shop/product/MXK53AM/A/magic-mouse-usb',
+    link: 'https://apple.com/shop/product/MXK53AM/A/magic-mouse-usb',
   },
   {
     name: 'Minisopuru - DisplayLink Dock',
@@ -91,8 +91,8 @@ export const gear: Gear[] = [
     category: 'Desk Setup',
     description: "An ergonomic chair + headrest that's actually comfortable.",
     image:
-      'https://www.branchfurniture.com/cdn/shop/files/bb2_e358b257-fee0-4c22-9782-8e45e1d4ac1b.webp?v=1734727321',
-    link: 'https://www.branchfurniture.com/products/ergonomic-chair?variant=21246167515195',
+      'https://branchfurniture.com/cdn/shop/files/bb2_e358b257-fee0-4c22-9782-8e45e1d4ac1b.webp?v=1734727321',
+    link: 'https://branchfurniture.com/products/ergonomic-chair?variant=21246167515195',
   },
   {
     name: 'Nomad - Wireless Charging Station',
@@ -115,8 +115,8 @@ export const gear: Gear[] = [
     category: 'Apps',
     description:
       'Powerful Xcode Simulator tools such as network monitor, airplane mode, permission management and much more.',
-    image: 'https://www.rocketsim.app/Assets/rocketsim-app-icon.png',
-    link: 'https://www.rocketsim.app',
+    image: 'https://rocketsim.app/Assets/rocketsim-app-icon.png',
+    link: 'https://rocketsim.app',
   },
   {
     name: 'Flighty',
@@ -156,7 +156,7 @@ export const gear: Gear[] = [
     description: 'Daily driver. Sleek, powerful, and intuitive.',
     image:
       'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spaceblack-gallery4-202410?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=1729264978259',
-    link: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb',
+    link: 'https://apple.com/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb',
   },
   {
     name: 'Apple AirPods Pro 2',
@@ -164,7 +164,7 @@ export const gear: Gear[] = [
     image: AirPods,
     description:
       'Wireless earphones with active noise cancellation, adaptive audio, conversation awareness and more.',
-    link: 'https://www.apple.com/airpods-pro/',
+    link: 'https://apple.com/airpods-pro/',
   },
   {
     name: 'Apple AirTag',
@@ -172,7 +172,7 @@ export const gear: Gear[] = [
     description: 'Track my keys, wallet, backpack, and more.',
     image:
       'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=890&hei=740&fmt=jpeg&qlt=90&.v=1617761672000',
-    link: 'https://www.apple.com/airtag/',
+    link: 'https://apple.com/airtag/',
   },
   {
     name: 'Apple Watch - Series 9',
@@ -180,7 +180,7 @@ export const gear: Gear[] = [
     description:
       'Stylish, all-in-one tool for health tracking, productivity, and staying connected.',
     image: AppleWatch,
-    link: 'https://www.apple.com/watch/',
+    link: 'https://apple.com/watch/',
   },
   {
     name: 'Bottega Veneta - Flap Card Case',
@@ -188,6 +188,6 @@ export const gear: Gear[] = [
     description:
       'Intrecciato leather card case, perfect for carrying upto 8 cards.',
     image: Bottega,
-    link: 'https://www.bottegaveneta.com/en-us/flap-card-case-space-813351120.html',
+    link: 'https://bottegaveneta.com/en-us/flap-card-case-space-813351120.html',
   },
 ];

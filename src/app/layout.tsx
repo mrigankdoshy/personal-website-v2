@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Mrigank Doshy',
-      url: 'https://www.mrigankdoshy.com',
+      url: 'https://mrigankdoshy.com',
     },
   ],
 };
