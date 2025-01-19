@@ -7,7 +7,7 @@ import { Section } from '@/shared/ui/section';
 import { Tag } from '@/shared/ui/tag';
 
 const linkClassName =
-  'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01] w-full cursor-pointer border-none bg-transparent p-0 text-left focus:outline-none';
+  'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01] w-full border-none bg-transparent p-0 text-left focus:outline-none';
 
 export function Work() {
   return (
