@@ -2,6 +2,7 @@
 
 import { workExperiences } from '@/features/work/work-experience';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
+import { Link } from '@/shared/ui/link';
 import { Section } from '@/shared/ui/section';
 import { Tag } from '@/shared/ui/tag';
 
@@ -24,11 +25,7 @@ export function Work() {
       <div className="group flex flex-col gap-12">
         {workExperiences.map(
           ({ id, href, description, date, role, company, tags }) => (
-            <button
-              key={id}
-              onClick={() => window.open(href, '_blank')}
-              className={linkClassName}
-            >
+            <div key={id} className={linkClassName}>
               <Section heading={date} alignment="left">
                 <BlurReveal className="flex flex-col gap-6">
                   <div>
@@ -36,7 +33,9 @@ export function Work() {
                       <BlurRevealContent>{role}</BlurRevealContent>
                     </h2>
                     <h3 className="tracking-tight text-muted-foreground">
-                      <BlurRevealContent>{company}</BlurRevealContent>
+                      <BlurRevealContent>
+                        <Link href={href}>{company}</Link>
+                      </BlurRevealContent>
                     </h3>
                   </div>
                   <span>
@@ -51,7 +50,7 @@ export function Work() {
                   </div>
                 </BlurReveal>
               </Section>
-            </button>
+            </div>
           )
         )}
       </div>
