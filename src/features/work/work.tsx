@@ -34,12 +34,12 @@ export function Work() {
                       <BlurRevealContent>{role}</BlurRevealContent>
                     </h2>
                     <h3 className="tracking-tight text-muted-foreground">
-                      <BlurRevealContent className="flex gap-2">
+                      <BlurRevealContent className="flex items-center gap-2">
                         <Link href={href}>{company}</Link>
                         {archived && (
                           <Badge
                             variant="outline"
-                            className="border-archived/50 text-archived"
+                            className="border-badge/50 text-badge"
                           >
                             Archived
                           </Badge>

@@ -1,3 +1,4 @@
+import { Badge } from '@/shared/ui/badge';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Card } from '@/shared/ui/card';
 import { Link } from '@/shared/ui/link';
@@ -10,6 +11,7 @@ type ProjectCardProps = Readonly<{
   url?: string;
   title: string;
   description: string;
+  isPrivate?: boolean;
   tags: string[];
 }>;
 
@@ -17,6 +19,7 @@ export function ProjectCard({
   url,
   title,
   description,
+  isPrivate,
   tags,
 }: ProjectCardProps) {
   const { theme } = useTheme();
@@ -30,6 +33,7 @@ export function ProjectCard({
           <CardContent
             title={title}
             description={description}
+            isPrivate={isPrivate}
             tags={tags}
             showIcon
           />
@@ -44,17 +48,34 @@ export function ProjectCard({
 type CardContentProps = Readonly<{
   title: string;
   description: string;
+  isPrivate?: boolean;
   tags: string[];
   showIcon?: boolean;
 }>;
 
-function CardContent({ title, description, tags, showIcon }: CardContentProps) {
+function CardContent({
+  title,
+  description,
+  isPrivate,
+  tags,
+  showIcon,
+}: CardContentProps) {
   return (
     <BlurReveal className="flex flex-grow flex-col justify-between gap-6">
       <div className="flex flex-col gap-3">
         <div className="flex justify-between">
           <h2 className="text-xl font-bold text-foreground">
             <BlurRevealContent>{title}</BlurRevealContent>
+            {isPrivate && (
+              <BlurRevealContent>
+                <Badge
+                  variant="outline"
+                  className="ml-2 inline border-badge/50 align-middle text-badge"
+                >
+                  Private
+                </Badge>
+              </BlurRevealContent>
+            )}
           </h2>
           {showIcon && (
             <BlurRevealContent>

@@ -2,6 +2,7 @@ type Project = Readonly<{
   id: string;
   title: string;
   description: string;
+  isPrivate?: boolean;
   url?: string;
   tags: string[];
 }>;
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     description:
       'Browse over 100+ curated AI tools for business that will enable you to scale and create more revenue, reduce your costs, and optimize your content and customer engagement',
     url: 'https://github.com/mrigankdoshy/tools-for-business',
+    isPrivate: true,
     tags: ['Next.js', 'Supabase', 'Framer Motion'],
   },
   {
@@ -76,6 +78,7 @@ export const projects: Project[] = [
     title: 'Netflix Memories',
     description: 'A collection of memories in a Netflix themed app',
     url: 'https://github.com/mrigankdoshy/netflix-memories',
+    isPrivate: true,
     tags: ['Flutter', 'iOS', 'Android'],
   },
   {
@@ -92,6 +95,7 @@ export const projects: Project[] = [
     description:
       'Explore PCA to discern whether low-dimensional structure exists in a set of data and to find good representations of the data in that subspace',
     url: 'https://github.com/mrigankdoshy/principal-component-analysis',
+    isPrivate: true,
     tags: ['Python', 'Scikit-learn', 'PCA'],
   },
   {
@@ -100,6 +104,7 @@ export const projects: Project[] = [
     description:
       'Implementing the k-means++ algorithm using it to cluster Iris dataset from the UCI Machine Learning Repository',
     url: 'https://github.com/mrigankdoshy/k-means-clustering',
+    isPrivate: true,
     tags: ['Python', 'Scipy', 'K-means'],
   },
   {
@@ -108,6 +113,7 @@ export const projects: Project[] = [
     description:
       'Experiment with non-linear classifiers: Boosted Decision Trees (i.e., boosting with decision trees as weak learner) and Random Forests',
     url: 'https://github.com/mrigankdoshy/non-linear-classifiers',
+    isPrivate: true,
     tags: ['Python', 'Scikit-learn', 'XGBoost'],
   },
   {
@@ -116,6 +122,7 @@ export const projects: Project[] = [
     description:
       'A simple linear regression model with a modified loss function and try to solve it with Gradient Descant (GD) and Stochastic Gradient Descant (SGD)',
     url: 'https://github.com/mrigankdoshy/linear-regression-gd-sgd',
+    isPrivate: true,
     tags: ['Python', 'Matplotlib'],
   },
   {
@@ -124,6 +131,7 @@ export const projects: Project[] = [
     description:
       'Use the k-NN algorithm to find the optimal value for the number of neighbors k, using the implementation in scikit-learn',
     url: 'https://github.com/mrigankdoshy/k-NN-algorithm',
+    isPrivate: true,
     tags: ['Python', 'Scikit-learn'],
   },
   {
@@ -132,6 +140,7 @@ export const projects: Project[] = [
     description:
       'Basic data analysis on a simple data set (UCI Adult data set) using pandas package in Python',
     url: 'https://github.com/mrigankdoshy/exploratory-data-analysis',
+    isPrivate: true,
     tags: ['Python', 'Pandas'],
   },
   {
@@ -140,6 +149,7 @@ export const projects: Project[] = [
     description:
       'Implemented an access control mechanism to perform translations / accesses for when pages are already in memory, and fault over to the software when the page is not resident',
     url: 'https://github.com/PSU473/p3-2020-vm-paging-cmpsc-473-project-3',
+    isPrivate: true,
     tags: ['C', 'OS', 'Page Replacement'],
   },
   {
@@ -148,6 +158,7 @@ export const projects: Project[] = [
     description:
       'Implemented the Buddy System and Slab Allocation for memory allocation / de-allocation, and reduced Internal Fragmentation',
     url: 'https://github.com/PSU473/p2-2020-memory-allocation-cmpsc-473-project-2',
+    isPrivate: true,
     tags: ['C', 'OS', 'Memory Management'],
   },
   {
@@ -156,6 +167,7 @@ export const projects: Project[] = [
     description:
       'Designed four multi-threaded schedulers (FCFS, SRTF, PBS, MLFQ) with preemption and synchronization for a uni-processor environment',
     url: 'https://github.com/PSU473/p1-2020-thread-schedulers-cmpsc-473-project-1',
+    isPrivate: true,
     tags: ['C', 'Multi-threading'],
   },
   {
@@ -164,6 +176,7 @@ export const projects: Project[] = [
     description:
       'Developed a Lexical Analyzer and a Syntactic Analyzer which parses the tokens given by the Lexer using the Recursive Descent technique for a restricted for of SQL',
     url: 'https://github.com/mrigankdoshy/recursive-descent-parser',
+    isPrivate: true,
     tags: ['Python'],
   },
   {
@@ -180,6 +193,7 @@ export const projects: Project[] = [
     description:
       'Created an 32-bit processor using the pipelining technique for building a fast CPU',
     url: 'https://github.com/mrigankdoshy/32bit-cpu',
+    isPrivate: true,
     tags: ['Verilog', 'FPGA', 'Xilinx'],
   },
   {
@@ -194,6 +208,7 @@ export const projects: Project[] = [
     title: 'Sequential Caching Web Proxy',
     description: 'A Sequential Caching Web Proxy with Range Support',
     url: 'https://github.com/mrigankdoshy/sequential-caching-web-proxy',
+    isPrivate: true,
     tags: ['C', 'Cache'],
   },
   {
@@ -202,6 +217,7 @@ export const projects: Project[] = [
     description:
       'Created a simple Unix Shell that supports job control, allows users to move jobs back and forth between the back-ground and foreground, and to change the process state of a job',
     url: 'https://github.com/mrigankdoshy/unix-shell',
+    isPrivate: true,
     tags: ['C', 'Unix'],
   },
   {
@@ -210,6 +226,7 @@ export const projects: Project[] = [
     description:
       'Developed a text-based game using Model View Controller Design Pattern that lets you explore campus and pick up different items via the console',
     url: 'https://github.com/mrigankdoshy/text-based-game',
+    isPrivate: true,
     tags: ['Java', 'MVC', 'Strategy Pattern'],
   },
 ];

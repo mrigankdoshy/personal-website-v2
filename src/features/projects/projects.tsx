@@ -39,7 +39,7 @@ export function Projects() {
         >
           <AnimatePresence>
             {projectsToDisplay.map(
-              ({ id, title, description, url, tags }, index) => (
+              ({ id, title, description, isPrivate, url, tags }, index) => (
                 <motion.div
                   key={id}
                   className="col-span-1"
@@ -60,6 +60,7 @@ export function Projects() {
                   <ProjectCard
                     title={title}
                     description={description}
+                    isPrivate={isPrivate}
                     url={url}
                     tags={tags}
                   />
