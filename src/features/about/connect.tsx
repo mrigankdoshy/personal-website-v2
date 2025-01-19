@@ -15,6 +15,7 @@ import { ReactNode } from 'react';
 
 type ConnectLink = Readonly<{
   label: string;
+  subtitle?: string;
   href: string;
   icon: ReactNode;
 }>;
@@ -22,31 +23,37 @@ type ConnectLink = Readonly<{
 const connectLink: ConnectLink[] = [
   {
     label: 'Email',
+    subtitle: 'mrigankdoshy@gmail.com',
     href: 'mailto:mrigankdoshy@gmail.com',
     icon: <FontAwesomeIcon icon={faEnvelope} />,
   },
   {
     label: 'Instagram',
+    subtitle: 'mrigankdoshy',
     href: 'https://www.instagram.com/mrigankdoshy/',
     icon: <FontAwesomeIcon icon={faInstagram} />,
   },
   {
     label: 'Twitter',
+    subtitle: '@mrigankdoshy',
     href: 'https://twitter.com/mrigankdoshy',
     icon: <FontAwesomeIcon icon={faTwitter} />,
   },
   {
     label: 'LinkedIn',
+    subtitle: 'in/mrigankdoshy',
     href: 'https://www.linkedin.com/in/mrigankdoshy/',
     icon: <FontAwesomeIcon icon={faLinkedin} />,
   },
   {
     label: 'GitHub',
+    subtitle: 'mrigankdoshy',
     href: 'https://github.com/mrigankdoshy',
     icon: <FontAwesomeIcon icon={faGithub} />,
   },
   {
     label: 'Spotify',
+    subtitle: 'Mrigank Doshy',
     href: 'https://open.spotify.com/user/0dmta114n09jih8ye0ql93v08',
     icon: <FontAwesomeIcon icon={faSpotify} />,
   },
@@ -56,7 +63,7 @@ export function Connect() {
   return (
     <Section heading="Connect" alignment="left">
       <ul className="animated-list grid flex-grow grid-cols-1 gap-3 md:grid-cols-2">
-        {connectLink.map(({ label, icon, href }) => (
+        {connectLink.map(({ label, subtitle, icon, href }) => (
           <li key={label} className="col-span-1 transition-opacity">
             <Link
               href={href}
@@ -65,7 +72,12 @@ export function Connect() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{icon}</span>
-                  <span className="text-sm">{label}</span>
+                  <div className="flex flex-col">
+                    <span className="text-sm">{label}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {subtitle}
+                    </span>
+                  </div>
                 </div>
                 <FontAwesomeIcon
                   className="-rotate-45 transform transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
