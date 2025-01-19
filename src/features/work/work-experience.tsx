@@ -9,6 +9,7 @@ type WorkExperience = Readonly<{
   date: string;
   role: string;
   company: string;
+  archived?: boolean;
   description: ReactNode;
   tags: TagProps[];
 }>;
@@ -105,6 +106,7 @@ export const workExperiences: WorkExperience[] = [
     date: '2019 - 2021',
     role: 'Co-Founder and Software Engineer',
     company: 'Mule',
+    archived: true,
     description: (
       <>
         <BlurRevealContent>
@@ -158,6 +160,7 @@ export const workExperiences: WorkExperience[] = [
     date: '2018 - 2021',
     role: 'Co-Founder',
     company: 'Blockchain@PSU',
+    archived: true,
     description: (
       <BlurRevealContent>
         Co-founded and scaled a student-run organization to over 300 members,

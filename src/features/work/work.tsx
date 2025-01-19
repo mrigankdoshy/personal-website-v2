@@ -1,6 +1,7 @@
 'use client';
 
 import { workExperiences } from '@/features/work/work-experience';
+import { Badge } from '@/shared/ui/badge';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Link } from '@/shared/ui/link';
 import { Section } from '@/shared/ui/section';
@@ -24,7 +25,7 @@ export function Work() {
       </BlurReveal>
       <div className="group flex flex-col gap-12">
         {workExperiences.map(
-          ({ id, href, description, date, role, company, tags }) => (
+          ({ id, href, description, date, role, company, archived, tags }) => (
             <div key={id} className={linkClassName}>
               <Section heading={date} alignment="left">
                 <BlurReveal className="flex flex-col gap-6">
@@ -33,8 +34,16 @@ export function Work() {
                       <BlurRevealContent>{role}</BlurRevealContent>
                     </h2>
                     <h3 className="tracking-tight text-muted-foreground">
-                      <BlurRevealContent>
+                      <BlurRevealContent className="flex gap-2">
                         <Link href={href}>{company}</Link>
+                        {archived && (
+                          <Badge
+                            variant="outline"
+                            className="border-archived/50 text-archived"
+                          >
+                            Archived
+                          </Badge>
+                        )}
                       </BlurRevealContent>
                     </h3>
                   </div>
