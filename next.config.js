@@ -34,7 +34,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.nordikbydesign.com',
+        hostname: 'nordikbydesign.com',
       },
       {
         protocol: 'https',
@@ -50,7 +50,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.branchfurniture.com',
+        hostname: 'branchfurniture.com',
       },
       {
         protocol: 'https',
@@ -58,7 +58,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.rocketsim.app',
+        hostname: 'rocketsim.app',
       },
       {
         protocol: 'https',
