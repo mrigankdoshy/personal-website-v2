@@ -1,4 +1,5 @@
 import { Gear } from '@/features/gear/data';
+import { Tag } from '@/shared/ui/tag';
 import Image from 'next/image';
 
 type GearItemProps = Omit<Gear, 'category'>;
@@ -27,14 +28,8 @@ export function GearItem({ name, description, image, link }: GearItemProps) {
             {description}
           </p>
         </div>
-        <div>
-          <a
-            className="ml-auto h-fit rounded-full bg-secondary px-4 py-2 text-sm"
-            href={link}
-            target="_blank"
-          >
-            Get
-          </a>
+        <div className="text-sm">
+          <Tag label="Get" href={link}></Tag>
         </div>
       </div>
     </li>
