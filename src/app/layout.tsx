@@ -18,10 +18,7 @@ const fontSans = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
-  },
+  title: siteConfig.title,
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon/favicon.ico',
