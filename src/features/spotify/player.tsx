@@ -1,8 +1,8 @@
 import { Cover } from '@/features/spotify/cover';
 import { PlaybackControl } from '@/features/spotify/playback-control';
 import { Progress } from '@/features/spotify/progress';
-import type { TrackInfo } from '@/features/spotify/spotify';
 import { Track } from '@/features/spotify/track';
+import { TrackInfo } from '@/features/spotify/types';
 
 type PlayerProps = TrackInfo | (Partial<TrackInfo> & { isPlaying: false });
 
