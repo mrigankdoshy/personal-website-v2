@@ -4,24 +4,18 @@ type PlaybackControlProps = {
 
 export function PlaybackControl({ isPlaying }: PlaybackControlProps) {
   return (
-    <div className="h-6 w-6" style={{ display: 'flex' }}>
-      {isPlaying ? <Equalizer /> : <PauseIcon />}
-    </div>
+    <div className="h-6 w-6">{isPlaying ? <Equalizer /> : <PauseIcon />}</div>
   );
 }
 
 function Equalizer() {
   return (
-    <div
-      className="flex h-full items-end space-x-0.5"
-      style={{ display: 'flex' }}
-    >
-      {[0.75, 0.9, 0.6].map((height, index) => (
+    <div className="flex h-full items-end space-x-0.5">
+      {[0.75, 0.9, 0.6, 0.7].map((height, index) => (
         <div
           key={index}
-          className="w-1.5 animate-equalizer rounded-sm bg-green-500"
+          className="w-1.5 animate-equalizer rounded-sm bg-[#1ED760]"
           style={{
-            display: 'flex',
             height: `${height * 100}%`,
             animationDelay: `${index * 0.2}s`,
           }}

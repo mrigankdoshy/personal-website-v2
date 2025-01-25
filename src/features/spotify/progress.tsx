@@ -9,7 +9,7 @@ export function Progress({ progress, duration }: ProgressProps) {
   return (
     <div className="h-1 w-full max-w-[200px] overflow-hidden rounded-full bg-gray-500">
       <div
-        className="h-full rounded-full bg-green-500 transition-all duration-300 ease-in-out"
+        className="h-full rounded-full bg-[#1ED760] transition-all duration-300 ease-in-out"
         style={{ width: `${percentage}%` }}
       />
     </div>

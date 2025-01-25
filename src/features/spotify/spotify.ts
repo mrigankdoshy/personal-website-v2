@@ -1,5 +1,11 @@
 /* eslint-disable no-console */
 
+import {
+  CurrentlyPlayingResponse,
+  Track,
+  TrackInfo,
+} from '@/features/spotify/types';
+
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID!;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET!;
 const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN || '';
@@ -8,23 +14,7 @@ const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 const NOW_PLAYING_ENDPOINT =
   'https://api.spotify.com/v1/me/player/currently-playing';
 
-export const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
-  'base64'
-);
-
-export type TrackInfo = {
-  isPlaying: boolean;
-  progress: number;
-  duration: number;
-  track: string;
-  artist: string;
-  coverUrl: string;
-  url: string;
-};
-
-type CurrentlyPlayingResponse = SpotifyApi.CurrentlyPlayingResponse;
-
-type Track = SpotifyApi.TrackObjectFull;
+const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64');
 
 function getRefreshToken(): string {
   if (typeof window !== 'undefined') {
@@ -57,11 +47,11 @@ async function getAccessToken() {
 
 function formatTrackInfo(
   trackInfo: CurrentlyPlayingResponse
-): TrackInfo | null {
+): TrackInfo | undefined {
   const { progress_ms, item, is_playing, currently_playing_type } = trackInfo;
 
-  if (item === null || currently_playing_type !== 'track') {
-    return null;
+  if (item === undefined || currently_playing_type !== 'track') {
+    return undefined;
   }
 
   const { duration_ms, name, artists, album, external_urls } = item as Track;
@@ -77,7 +67,7 @@ function formatTrackInfo(
   };
 }
 
-async function getCurrentTrack(): Promise<TrackInfo | null> {
+async function getCurrentTrack(): Promise<TrackInfo | undefined> {
   try {
     const token = await getAccessToken();
     const response = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -92,20 +82,20 @@ async function getCurrentTrack(): Promise<TrackInfo | null> {
 
     if (response.status !== 200) {
       console.log(`Spotify API returned status ${response.status}`);
-      return null;
+      return undefined;
     }
 
     const data: CurrentlyPlayingResponse = await response.json();
     const formattedTrack = formatTrackInfo(data);
 
-    if (formattedTrack === null) {
+    if (formattedTrack === undefined) {
       console.log('No track data available or not currently playing a track');
     }
 
     return formattedTrack;
   } catch (error) {
     console.error('Error in getCurrentTrack:', error);
-    return null;
+    return undefined;
   }
 }
 
@@ -129,7 +119,7 @@ export async function getNowPlaying({
   try {
     const track = await getCurrentTrack();
 
-    if (track === null) {
+    if (track === undefined) {
       console.log('No track currently playing');
       return { isPlaying: false };
     }
