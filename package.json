@@ -51,6 +51,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/spotify-api": "^0.0.25",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.1.3",
