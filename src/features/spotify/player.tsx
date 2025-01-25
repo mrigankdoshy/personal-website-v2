@@ -17,25 +17,27 @@ export function Player({
 }: PlayerProps) {
   if (isPlaying) {
     return (
-      <div className="mx-auto w-full max-w-md rounded-lg bg-gray-900 p-4 text-white shadow-lg">
-        <div className="flex items-center space-x-4">
+      <div className="w-full max-w-md rounded-lg bg-secondary p-4 text-foreground shadow-lg">
+        <div className="flex items-center gap-4">
           <Cover isPlaying={isPlaying} coverUrl={coverUrl} />
-          <div className="flex-grow">
-            <Track track={track} artist={artist} url={url} />
-            <div className="mt-2 flex items-center justify-between">
+          <div className="flex flex-grow flex-col justify-between gap-4">
+            <div className="flex items-start justify-between">
+              <Track track={track} artist={artist} url={url} />
               <PlaybackControl isPlaying={isPlaying} />
-              <Progress progress={progress} duration={duration} />
             </div>
+            <Progress progress={progress} duration={duration} />
           </div>
         </div>
       </div>
     );
   }
   return (
-    <div className="mx-auto w-full max-w-md rounded-lg bg-gray-900 p-4 text-white shadow-lg">
-      <div className="flex items-center gap-8">
-        <Cover isPlaying={isPlaying} />
-        <span>Not Playing - Spotify</span>
+    <div className="w-full max-w-md rounded-lg bg-secondary p-4 text-foreground shadow-lg">
+      <div className="flex items-center gap-4">
+        <Cover isPlaying={isPlaying} coverUrl={coverUrl} />
+        <div className="flex items-start justify-between">
+          <Track />
+        </div>
       </div>
     </div>
   );

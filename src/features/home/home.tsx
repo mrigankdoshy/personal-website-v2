@@ -48,7 +48,9 @@ export async function Home() {
           .
         </BlurRevealContent>
       </span>
-      <Player {...track} />
+      <BlurRevealContent className="mt-8">
+        <Player {...track} />
+      </BlurRevealContent>
     </BlurReveal>
   );
 }

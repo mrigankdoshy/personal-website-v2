@@ -1,4 +1,5 @@
 import { SpotifyLogo } from '@/features/spotify/spotify-logo';
+import Image from 'next/image';
 
 type CoverProps = {
   coverUrl?: string;
@@ -7,20 +8,17 @@ type CoverProps = {
 
 export function Cover({ coverUrl, isPlaying }: CoverProps) {
   return (
-    <div className="relative h-16 w-16" style={{ display: 'flex' }}>
+    <div className="relative h-16 w-16">
       {isPlaying && coverUrl ? (
-        <picture>
-          <img
-            src={coverUrl}
-            alt="Album cover"
-            className="h-full w-full rounded-md object-cover shadow-md transition-transform duration-300 hover:scale-105"
-          />
-        </picture>
+        <Image
+          src={coverUrl}
+          alt="Album cover"
+          height={64}
+          width={64}
+          className="h-full w-full rounded-md object-cover shadow-md"
+        />
       ) : (
-        <div
-          className="flex h-full w-full items-center justify-center rounded-md bg-gray-800"
-          style={{ display: 'flex' }}
-        >
+        <div className="flex h-full w-full items-center justify-center rounded-md">
           <SpotifyLogo />
         </div>
       )}
