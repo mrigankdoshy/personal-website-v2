@@ -3,13 +3,12 @@ import Image from 'next/image';
 
 type CoverProps = {
   coverUrl?: string;
-  isPlaying: boolean;
 };
 
-export function Cover({ coverUrl, isPlaying }: CoverProps) {
+export function Cover({ coverUrl }: CoverProps) {
   return (
     <div className="relative h-16 w-16">
-      {isPlaying && coverUrl ? (
+      {coverUrl ? (
         <Image
           src={coverUrl}
           alt="Album cover"
