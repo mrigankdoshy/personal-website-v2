@@ -102,34 +102,15 @@ async function getCurrentTrack(): Promise<TrackInfo | undefined> {
   }
 }
 
-async function getCoverBase64(url: string) {
-  try {
-    const res = await fetch(url);
-    const buff = await res.arrayBuffer();
-    return `data:image/jpeg;base64,${Buffer.from(buff).toString('base64')}`;
-  } catch (e) {
-    console.error('Error fetching cover image:', e);
-    return '';
-  }
-}
-
-type GetNowPlayingParams = { coverFormat?: 'url' | 'base64' };
 type GetNowPlayingResult = Promise<TrackInfo | { isPlaying: false }>;
 
-export async function getNowPlaying({
-  coverFormat = 'url',
-}: GetNowPlayingParams): GetNowPlayingResult {
+export async function getNowPlaying(): GetNowPlayingResult {
   try {
     const track = await getCurrentTrack();
 
     if (track === undefined) {
       console.log('No track currently playing');
       return { isPlaying: false };
-    }
-
-    if (coverFormat === 'base64' && typeof window !== 'undefined') {
-      const coverBase64 = await getCoverBase64(track.coverUrl);
-      return { ...track, coverUrl: coverBase64 };
     }
 
     return track;
