@@ -47,10 +47,6 @@ export function Player() {
   const { isPlaying, progress, duration, track, artists, coverUrl, url } =
     nowPlaying;
 
-  const displayedTrack = track ?? recentlyPlayed.track;
-  const displayedUrl = url ?? recentlyPlayed.url;
-  const displayedArtists = artists ?? recentlyPlayed.artists;
-  const displayedCover = coverUrl ?? recentlyPlayed.coverUrl;
   const isCurrentlyPlaying = track !== undefined && artists !== undefined;
 
   return (
@@ -59,13 +55,13 @@ export function Player() {
         {isCurrentlyPlaying ? 'Currently Playing' : 'Last Played'}
       </h2>
       <div className="flex items-center gap-4">
-        <Cover coverUrl={displayedCover} />
-        <div className="flex flex-grow flex-col justify-between gap-4">
+        <Cover coverUrl={coverUrl ?? recentlyPlayed.coverUrl} />
+        <div className="flex flex-grow flex-col justify-between gap-3">
           <div className="flex items-center justify-between gap-4">
             <Track
-              track={displayedTrack}
-              trackUrl={displayedUrl}
-              artists={displayedArtists}
+              track={track ?? recentlyPlayed.track}
+              trackUrl={url ?? recentlyPlayed.url}
+              artists={artists ?? recentlyPlayed.artists}
             />
             {isCurrentlyPlaying ? (
               <PlaybackControl isPlaying={isPlaying} />

@@ -22,23 +22,21 @@ export function Track({
           {track}
         </Link>
       ) : (
-        <span className="text-md line-clamp-1 font-bold">{track}</span>
+        <h2 className="text-md line-clamp-1 font-bold">{track}</h2>
       )}
       {artists && artists.length > 0 ? (
         <div className="flex flex-wrap gap-1 text-sm text-muted-foreground">
           {artists.map((artist, index) => (
-            <span key={artist.url}>
+            <p key={artist.url}>
               <Link href={artist.url} className="hover:underline">
                 {artist.name}
               </Link>
               {index < artists.length - 1 && ','}
-            </span>
+            </p>
           ))}
         </div>
       ) : (
-        <span className="line-clamp-1 text-sm text-muted-foreground">
-          Spotify
-        </span>
+        <p className="line-clamp-1 text-sm text-muted-foreground">Spotify</p>
       )}
     </div>
   );

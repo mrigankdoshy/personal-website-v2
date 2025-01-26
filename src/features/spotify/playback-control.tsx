@@ -26,7 +26,7 @@ function Equalizer() {
           transition={{
             repeat: Number.POSITIVE_INFINITY,
             repeatType: 'reverse',
-            duration: 0.8,
+            duration: 0.4 + index * 0.1,
             delay: index * 0.2,
           }}
         />
