@@ -7,7 +7,7 @@ type CoverProps = {
 
 export function Cover({ coverUrl }: CoverProps) {
   return (
-    <div className="relative h-16 w-16">
+    <div className="flex h-16 w-16 flex-shrink-0">
       {coverUrl ? (
         <Image
           priority

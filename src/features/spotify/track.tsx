@@ -17,26 +17,28 @@ export function Track({
       {trackUrl ? (
         <Link
           href={trackUrl}
-          className="text-md block truncate font-bold transition-opacity hover:opacity-80"
+          className="text-md line-clamp-1 font-bold transition-opacity hover:opacity-80"
         >
           {track}
         </Link>
       ) : (
-        <span className="text-md truncate font-bold">{track}</span>
+        <span className="text-md line-clamp-1 font-bold">{track}</span>
       )}
       {artists && artists.length > 0 ? (
         <div className="flex flex-wrap gap-1 text-sm text-muted-foreground">
           {artists.map((artist, index) => (
             <span key={artist.url}>
-              {index > 0 && ', '}
               <Link href={artist.url} className="hover:underline">
                 {artist.name}
               </Link>
+              {index < artists.length - 1 && ','}
             </span>
           ))}
         </div>
       ) : (
-        <span className="truncate text-sm text-muted-foreground">Spotify</span>
+        <span className="line-clamp-1 text-sm text-muted-foreground">
+          Spotify
+        </span>
       )}
     </div>
   );

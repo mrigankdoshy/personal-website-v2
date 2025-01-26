@@ -1,3 +1,5 @@
+import { faPause } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'motion/react';
 
 type PlaybackControlProps = {
@@ -6,7 +8,9 @@ type PlaybackControlProps = {
 
 export function PlaybackControl({ isPlaying }: PlaybackControlProps) {
   return (
-    <div className="h-6 w-6">{isPlaying ? <Equalizer /> : <PauseIcon />}</div>
+    <div className="h-6 w-6">
+      {isPlaying ? <Equalizer /> : <FontAwesomeIcon icon={faPause} size="lg" />}
+    </div>
   );
 }
 
@@ -28,14 +32,5 @@ function Equalizer() {
         />
       ))}
     </div>
-  );
-}
-
-function PauseIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full">
-      <rect x="6" y="4" width="4" height="16" rx="1" />
-      <rect x="14" y="4" width="4" height="16" rx="1" />
-    </svg>
   );
 }

@@ -19,6 +19,7 @@ export function Player() {
     isLoading: isLoadingNowPlaying,
     error: errorNowPlaying,
   } = useNowPlaying();
+
   const {
     data: recentlyPlayedTracks,
     isLoading: isLoadingRecentlyPlayed,
@@ -60,7 +61,7 @@ export function Player() {
       <div className="flex items-center gap-4">
         <Cover coverUrl={displayedCover} />
         <div className="flex flex-grow flex-col justify-between gap-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <Track
               track={displayedTrack}
               trackUrl={displayedUrl}
