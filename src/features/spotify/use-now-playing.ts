@@ -1,9 +1,12 @@
-import { TrackInfo } from '@/features/spotify/types';
+import { RecentlyPlayedTrack, TrackInfo } from '@/features/spotify/types';
 import { useQuery } from '@tanstack/react-query';
 
 type NowPlayingResponse =
   | TrackInfo
-  | (Partial<TrackInfo> & { isPlaying: false });
+  | (Partial<TrackInfo> & {
+      isPlaying: false;
+      recentlyPlayed?: RecentlyPlayedTrack[];
+    });
 
 export function useNowPlaying() {
   return useQuery<NowPlayingResponse>({

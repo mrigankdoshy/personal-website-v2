@@ -4,6 +4,7 @@ import { Cover } from '@/features/spotify/cover';
 import { PlaybackControl } from '@/features/spotify/playback-control';
 import { PlayerWrapper } from '@/features/spotify/player-wrapper';
 import { Progress } from '@/features/spotify/progress';
+import { RecentlyPlayed } from '@/features/spotify/recently-played';
 import { Track } from '@/features/spotify/track';
 import { useNowPlaying } from '@/features/spotify/use-now-playing';
 
@@ -15,7 +16,7 @@ export function Player() {
   }
 
   if (error) {
-    return <PlayerWrapper> Error: {(error as Error).message}</PlayerWrapper>;
+    return <PlayerWrapper>Error: {(error as Error).message}</PlayerWrapper>;
   }
 
   if (!data) {
@@ -38,6 +39,7 @@ export function Player() {
           {isPlaying && <Progress progress={progress} duration={duration} />}
         </div>
       </div>
+      {!hasTrack && <RecentlyPlayed />}
     </PlayerWrapper>
   );
 }
