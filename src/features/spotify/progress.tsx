@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 type ProgressProps = {
   progress: number;
   duration: number;
@@ -8,9 +10,11 @@ export function Progress({ progress, duration }: ProgressProps) {
 
   return (
     <div className="h-1 w-full max-w-[200px] overflow-hidden rounded-full bg-gray-500">
-      <div
-        className="h-full rounded-full bg-[#1ED760] transition-all duration-300 ease-in-out"
-        style={{ width: `${percentage}%` }}
+      <motion.div
+        className="h-full rounded-full bg-[#1ED760]"
+        initial={{ width: 0 }}
+        animate={{ width: `${percentage}%` }}
+        transition={{ duration: 0.3 }}
       />
     </div>
   );

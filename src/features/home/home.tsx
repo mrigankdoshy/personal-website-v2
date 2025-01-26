@@ -1,5 +1,4 @@
 import { Player } from '@/features/spotify/player';
-import { getNowPlaying } from '@/features/spotify/spotify';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Link } from '@/shared/ui/link';
 import { Fragment } from 'react';
@@ -10,8 +9,6 @@ const subheading = 'I build intuitive mobile and web apps.';
 export async function Home() {
   const headingWords = heading.split(' ');
   const subheadingWords = subheading.split(' ');
-
-  const track = await getNowPlaying({ coverFormat: 'base64' });
 
   return (
     <BlurReveal className="flex flex-col gap-4">
@@ -49,7 +46,7 @@ export async function Home() {
         </BlurRevealContent>
       </span>
       <BlurRevealContent className="mt-8">
-        <Player {...track} />
+        <Player />
       </BlurRevealContent>
     </BlurReveal>
   );

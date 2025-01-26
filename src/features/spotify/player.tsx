@@ -1,34 +1,43 @@
+'use client';
+
 import { Cover } from '@/features/spotify/cover';
 import { PlaybackControl } from '@/features/spotify/playback-control';
+import { PlayerWrapper } from '@/features/spotify/player-wrapper';
 import { Progress } from '@/features/spotify/progress';
 import { Track } from '@/features/spotify/track';
-import { TrackInfo } from '@/features/spotify/types';
+import { useNowPlaying } from '@/features/spotify/use-now-playing';
 
-type PlayerProps = TrackInfo | (Partial<TrackInfo> & { isPlaying: false });
+export function Player() {
+  const { data, isLoading, error } = useNowPlaying();
 
-export function Player({
-  isPlaying,
-  progress,
-  duration,
-  track,
-  artist,
-  coverUrl,
-  url,
-}: PlayerProps) {
-  const hasTrack = artist !== undefined && track !== undefined;
+  if (isLoading) {
+    return <PlayerWrapper>Loading...</PlayerWrapper>;
+  }
+
+  if (error) {
+    return <PlayerWrapper> Error: {(error as Error).message}</PlayerWrapper>;
+  }
+
+  if (!data) {
+    return <PlayerWrapper>No data available</PlayerWrapper>;
+  }
+
+  const { isPlaying, progress, duration, track, artists, coverUrl, url } = data;
+
+  const hasTrack = track !== undefined && artists !== undefined;
 
   return (
-    <div className="w-full max-w-md rounded-lg bg-secondary p-4 text-foreground">
+    <PlayerWrapper>
       <div className="flex items-center gap-4">
         <Cover coverUrl={coverUrl} />
         <div className="flex flex-grow flex-col justify-between gap-4">
           <div className="flex items-start justify-between">
-            <Track track={track} artist={artist} url={url} />
+            <Track track={track} trackUrl={url} artists={artists} />
             {hasTrack && <PlaybackControl isPlaying={isPlaying} />}
           </div>
           {isPlaying && <Progress progress={progress} duration={duration} />}
         </div>
       </div>
-    </div>
+    </PlayerWrapper>
   );
 }

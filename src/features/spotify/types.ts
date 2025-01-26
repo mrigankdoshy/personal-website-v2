@@ -1,9 +1,14 @@
+export type Artist = {
+  name: string;
+  url: string;
+};
+
 export type TrackInfo = {
   isPlaying: boolean;
   progress: number;
   duration: number;
   track: string;
-  artist: string;
+  artists: Artist[];
   coverUrl: string;
   url: string;
 };

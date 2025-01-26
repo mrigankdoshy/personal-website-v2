@@ -57,11 +57,14 @@ function formatTrackInfo(
   const { duration_ms, name, artists, album, external_urls } = item as Track;
 
   return {
+    isPlaying: is_playing,
     progress: progress_ms ?? 0,
     duration: duration_ms,
     track: name,
-    artist: artists.map(({ name }) => name).join(', '),
-    isPlaying: is_playing,
+    artists: artists.map(({ name, external_urls }) => ({
+      name,
+      url: external_urls.spotify,
+    })),
     coverUrl: album.images[album.images.length - 1]?.url ?? '',
     url: external_urls.spotify,
   };

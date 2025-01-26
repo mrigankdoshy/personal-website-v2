@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 type PlaybackControlProps = {
   isPlaying: boolean;
 };
@@ -12,12 +14,16 @@ function Equalizer() {
   return (
     <div className="flex h-full items-end space-x-0.5">
       {[0.75, 0.9, 0.6, 0.7].map((height, index) => (
-        <div
+        <motion.div
           key={index}
-          className="w-1.5 animate-equalizer rounded-sm bg-[#1ED760]"
-          style={{
-            height: `${height * 100}%`,
-            animationDelay: `${index * 0.2}s`,
+          className="w-1.5 rounded-sm bg-[#1ED760]"
+          initial={{ height: 0 }}
+          animate={{ height: `${height * 100}%` }}
+          transition={{
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: 'reverse',
+            duration: 0.8,
+            delay: index * 0.2,
           }}
         />
       ))}
