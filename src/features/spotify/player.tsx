@@ -10,57 +10,67 @@ import { useNowPlaying } from '@/features/spotify/use-now-playing';
 import { useRecentlyPlayed } from '@/features/spotify/use-recently-played';
 import { formatDistanceToNow } from 'date-fns';
 
-const formatPlayedAt = (playedAt: string | undefined): string => {
-  if (!playedAt) {
-    return '';
-  }
-  const date = new Date(playedAt);
-  return formatDistanceToNow(date, { addSuffix: true });
-};
+const formatPlayedAt = (playedAt: string): string =>
+  formatDistanceToNow(new Date(playedAt), { addSuffix: true });
 
 export function Player() {
-  const { data, isLoading, error } = useNowPlaying();
-  const { data: recentlyPlayedTracks } = useRecentlyPlayed();
+  const {
+    data: nowPlaying,
+    isLoading: isLoadingNowPlaying,
+    error: errorNowPlaying,
+  } = useNowPlaying();
+  const {
+    data: recentlyPlayedTracks,
+    isLoading: isLoadingRecentlyPlayed,
+    error: errorRecentlyPlayed,
+  } = useRecentlyPlayed();
 
   const recentlyPlayed = recentlyPlayedTracks?.[0];
 
-  if (isLoading) {
+  if (isLoadingNowPlaying || isLoadingRecentlyPlayed) {
     return <PlayerWrapper>Loading...</PlayerWrapper>;
   }
 
-  if (error) {
-    return <PlayerWrapper>Error: {(error as Error).message}</PlayerWrapper>;
+  if (errorNowPlaying || errorRecentlyPlayed) {
+    return (
+      <PlayerWrapper>
+        Error: {((errorNowPlaying || errorRecentlyPlayed) as Error).message}
+      </PlayerWrapper>
+    );
   }
 
-  if (!data) {
+  if (!nowPlaying || !recentlyPlayed) {
     return <PlayerWrapper>No data available</PlayerWrapper>;
   }
 
-  const { isPlaying, progress, duration, track, artists, coverUrl, url } = data;
+  const { isPlaying, progress, duration, track, artists, coverUrl, url } =
+    nowPlaying;
 
-  const hasTrack = track !== undefined && artists !== undefined;
+  const displayedTrack = track ?? recentlyPlayed.track;
+  const displayedUrl = url ?? recentlyPlayed.url;
+  const displayedArtists = artists ?? recentlyPlayed.artists;
+  const displayedCover = coverUrl ?? recentlyPlayed.coverUrl;
+  const isCurrentlyPlaying = track !== undefined && artists !== undefined;
 
   return (
     <PlayerWrapper>
       <h2 className="text-lg font-semibold">
-        {hasTrack ? 'Currently Playing' : 'Last Played'}
+        {isCurrentlyPlaying ? 'Currently Playing' : 'Last Played'}
       </h2>
       <div className="flex items-center gap-4">
-        <Cover coverUrl={coverUrl ?? recentlyPlayed?.coverUrl} />
+        <Cover coverUrl={displayedCover} />
         <div className="flex flex-grow flex-col justify-between gap-4">
-          <div
-            className={`flex ${hasTrack ? 'items-start' : 'items-center'} justify-between`}
-          >
+          <div className="flex items-center justify-between">
             <Track
-              track={track ?? recentlyPlayed?.track}
-              trackUrl={url ?? recentlyPlayed?.url}
-              artists={artists ?? recentlyPlayed?.artists}
+              track={displayedTrack}
+              trackUrl={displayedUrl}
+              artists={displayedArtists}
             />
-            {hasTrack ? (
+            {isCurrentlyPlaying ? (
               <PlaybackControl isPlaying={isPlaying} />
             ) : (
               <p className="text-xs text-muted-foreground">
-                {formatPlayedAt(recentlyPlayed?.playedAt)}
+                {formatPlayedAt(recentlyPlayed.playedAt)}
               </p>
             )}
           </div>
