@@ -18,7 +18,7 @@ export function Player({
   const hasTrack = artist !== undefined && track !== undefined;
 
   return (
-    <div className="w-full max-w-md rounded-lg bg-secondary p-4 text-foreground shadow-lg">
+    <div className="w-full max-w-md rounded-lg bg-secondary p-4 text-foreground">
       <div className="flex items-center gap-4">
         <Cover coverUrl={coverUrl} />
         <div className="flex flex-grow flex-col justify-between gap-4">

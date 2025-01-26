@@ -10,10 +10,12 @@ export function Cover({ coverUrl }: CoverProps) {
     <div className="relative h-16 w-16">
       {coverUrl ? (
         <Image
+          priority
           src={coverUrl}
           alt="Album cover"
           height={64}
           width={64}
+          quality={100}
           className="h-full w-full rounded-md object-cover shadow-md"
         />
       ) : (
