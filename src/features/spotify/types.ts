@@ -21,11 +21,20 @@ export type RecentlyPlayedTrack = {
   playedAt: string;
 };
 
-export type CurrentlyPlayingResponse = SpotifyApi.CurrentlyPlayingResponse;
-
-export type RecentlyPlayedResponse =
-  SpotifyApi.UsersRecentlyPlayedTracksResponse;
+export type TopTrack = {
+  track: string;
+  artists: Artist[];
+  coverUrl: string;
+  url: string;
+};
 
 export type PlayHistory = SpotifyApi.PlayHistoryObject;
 
 export type Track = SpotifyApi.TrackObjectFull;
+
+export type CurrentlyPlayingResponse = SpotifyApi.CurrentlyPlayingResponse;
+
+export type TopTrackResponse = SpotifyApi.UsersTopTracksResponse;
+
+export type RecentlyPlayedResponse =
+  SpotifyApi.UsersRecentlyPlayedTracksResponse;

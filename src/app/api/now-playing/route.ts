@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 import { getNowPlaying } from '@/features/spotify/spotify';
 import { NextResponse } from 'next/server';
 

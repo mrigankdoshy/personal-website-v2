@@ -5,6 +5,8 @@ import type {
   PlayHistory,
   RecentlyPlayedResponse,
   RecentlyPlayedTrack,
+  TopTrack,
+  TopTrackResponse,
   Track,
   TrackInfo,
 } from '@/features/spotify/types';
@@ -18,7 +20,9 @@ export const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 export const NOW_PLAYING_ENDPOINT =
   'https://api.spotify.com/v1/me/player/currently-playing';
 export const RECENTLY_PLAYED_ENDPOINT =
-  'https://api.spotify.com/v1/me/player/recently-played?limit=10';
+  'https://api.spotify.com/v1/me/player/recently-played?limit=1';
+export const TOP_TRACKS_ENDPOINT =
+  'https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=medium_term';
 
 export const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
   'base64'
@@ -111,9 +115,9 @@ async function getCurrentTrack(): Promise<TrackInfo | undefined> {
   }
 }
 
-type GetNowPlayingResult = Promise<TrackInfo | { isPlaying: false }>;
-
-export async function getNowPlaying(): GetNowPlayingResult {
+export async function getNowPlaying(): Promise<
+  TrackInfo | { isPlaying: false }
+> {
   try {
     const track = await getCurrentTrack();
 
@@ -145,7 +149,7 @@ function formatRecentlyPlayed({
   };
 }
 
-async function getRecentlyPlayedTracks(): Promise<
+export async function getRecentlyPlayed(): Promise<
   RecentlyPlayedTrack[] | undefined
 > {
   try {
@@ -179,20 +183,43 @@ async function getRecentlyPlayedTracks(): Promise<
   }
 }
 
-export async function getRecentlyPlayed(): Promise<
-  RecentlyPlayedTrack[] | undefined
-> {
-  try {
-    const tracks = await getRecentlyPlayedTracks();
+function formatTopTrack(track: Track): TopTrack {
+  return {
+    track: track.name,
+    artists: track.artists.map((artist) => ({
+      name: artist.name,
+      url: artist.external_urls.spotify,
+    })),
+    coverUrl: track.album.images[track.album.images.length - 1]?.url ?? '',
+    url: track.external_urls.spotify,
+  };
+}
 
-    if (tracks === undefined || tracks.length < 1) {
-      console.log('No recently played tracks');
+export async function getTopTracks(): Promise<TopTrack[] | undefined> {
+  try {
+    const token = await getAccessToken();
+    const response = await fetch(TOP_TRACKS_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+
+    if (response.status !== 200) {
+      console.log(`Spotify API returned status ${response.status}`);
       return undefined;
     }
 
-    return tracks;
+    const data: TopTrackResponse = await response.json();
+    const formattedTracks = data.items.map(formatTopTrack);
+
+    if (formattedTracks.length < 1) {
+      console.log('No recently played tracks');
+    }
+
+    return formattedTracks;
   } catch (error) {
-    console.error('Error in getRecentlyPlayed:', error);
+    console.error('Error in getTopTracks:', error);
     return undefined;
   }
 }
