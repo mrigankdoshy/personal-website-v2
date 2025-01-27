@@ -66,7 +66,7 @@ export function Player() {
             {isCurrentlyPlaying ? (
               <PlaybackControl isPlaying={isPlaying} />
             ) : (
-              <p className="text-xs text-muted-foreground">
+              <p className="flex-shrink-0 text-xs text-muted-foreground">
                 {formatPlayedAt(recentlyPlayed.playedAt)}
               </p>
             )}
