@@ -22,7 +22,7 @@ export const NOW_PLAYING_ENDPOINT =
 export const RECENTLY_PLAYED_ENDPOINT =
   'https://api.spotify.com/v1/me/player/recently-played?limit=1';
 export const TOP_TRACKS_ENDPOINT =
-  'https://api.spotify.com/v1/me/top/tracks?limit=3&time_range=medium_term';
+  'https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=medium_term';
 
 export const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
   'base64'
