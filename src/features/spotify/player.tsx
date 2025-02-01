@@ -2,6 +2,7 @@
 
 import { Cover } from '@/features/spotify/cover';
 import { PlaybackControl } from '@/features/spotify/playback-control';
+import { PlayerSkeleton } from '@/features/spotify/player-skeleton';
 import { PlayerWrapper } from '@/features/spotify/player-wrapper';
 import { Progress } from '@/features/spotify/progress';
 import { TopTracks } from '@/features/spotify/top-tracks';
@@ -29,7 +30,7 @@ export function Player() {
   const recentlyPlayed = recentlyPlayedTracks?.[0];
 
   if (isLoadingNowPlaying || isLoadingRecentlyPlayed) {
-    return <PlayerWrapper>Loading...</PlayerWrapper>;
+    return <PlayerSkeleton />;
   }
 
   if (errorNowPlaying || errorRecentlyPlayed) {
@@ -41,7 +42,7 @@ export function Player() {
   }
 
   if (!nowPlaying || !recentlyPlayed) {
-    return <PlayerWrapper>No data available</PlayerWrapper>;
+    return <></>;
   }
 
   const { isPlaying, progress, duration, track, artists, coverUrl, url } =
