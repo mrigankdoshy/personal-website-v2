@@ -9,7 +9,7 @@ export function PlayerWrapper({ children }: PlayerWrapperProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex w-full max-w-md flex-col gap-4 rounded-xl border border-secondary bg-secondary/30 p-6 text-foreground shadow-lg backdrop-blur-md"
+      className="flex w-full max-w-md flex-col gap-8 rounded-xl border border-secondary bg-secondary/30 p-6 text-foreground shadow-lg backdrop-blur-md"
     >
       {children}
     </motion.div>

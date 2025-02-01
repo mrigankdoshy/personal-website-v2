@@ -14,7 +14,7 @@ export function TopTracks() {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-lg font-semibold">Top Songs</h2>
-      <div className="scrollbar-thin scrollbar-thumb-secondary scrollbar-track-secondary/20 max-h-56 space-y-4 overflow-y-auto pr-2">
+      <div className="no-scrollbar max-h-56 space-y-4 overflow-y-auto pr-2">
         {tracks?.map((track, index) => (
           <motion.div
             key={track.url}
