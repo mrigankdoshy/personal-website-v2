@@ -13,8 +13,8 @@ export function Cover({ coverUrl }: CoverProps) {
           priority
           src={coverUrl}
           alt="Album cover"
-          height={64}
-          width={64}
+          height={640}
+          width={640}
           quality={100}
           className="h-full w-full rounded-md object-cover shadow-md"
         />

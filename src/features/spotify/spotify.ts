@@ -78,7 +78,7 @@ function formatTrackInfo({
       name,
       url: external_urls.spotify,
     })),
-    coverUrl: album.images[album.images.length - 1]?.url ?? '',
+    coverUrl: album.images[0]?.url ?? '',
     url: external_urls.spotify,
   };
 }
@@ -143,7 +143,7 @@ function formatRecentlyPlayed({
       name: artist.name,
       url: artist.external_urls.spotify,
     })),
-    coverUrl: track.album.images[track.album.images.length - 1]?.url ?? '',
+    coverUrl: track.album.images[0]?.url ?? '',
     url: track.external_urls.spotify,
     playedAt: played_at,
   };
@@ -190,7 +190,7 @@ function formatTopTrack(track: Track): TopTrack {
       name: artist.name,
       url: artist.external_urls.spotify,
     })),
-    coverUrl: track.album.images[track.album.images.length - 1]?.url ?? '',
+    coverUrl: track.album.images[0]?.url ?? '',
     url: track.external_urls.spotify,
   };
 }
