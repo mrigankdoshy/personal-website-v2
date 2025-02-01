@@ -19,7 +19,7 @@ export function Cover({ coverUrl }: CoverProps) {
           className="h-full w-full rounded-md object-cover shadow-md"
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center rounded-md">
+        <div className="flex h-full w-full items-center justify-center rounded-md bg-secondary">
           <SpotifyLogo />
         </div>
       )}

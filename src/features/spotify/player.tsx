@@ -10,6 +10,7 @@ import { Track } from '@/features/spotify/track';
 import { useNowPlaying } from '@/features/spotify/use-now-playing';
 import { useRecentlyPlayed } from '@/features/spotify/use-recently-played';
 import { formatDistanceToNow } from 'date-fns';
+import { AnimatePresence, motion } from 'motion/react';
 
 const formatPlayedAt = (playedAt: string): string =>
   formatDistanceToNow(new Date(playedAt), { addSuffix: true });
@@ -36,13 +37,20 @@ export function Player() {
   if (errorNowPlaying || errorRecentlyPlayed) {
     return (
       <PlayerWrapper>
-        Error: {((errorNowPlaying || errorRecentlyPlayed) as Error).message}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="text-red-500"
+        >
+          Error: {((errorNowPlaying || errorRecentlyPlayed) as Error).message}
+        </motion.div>
       </PlayerWrapper>
     );
   }
 
   if (!nowPlaying || !recentlyPlayed) {
-    return <></>;
+    return null;
   }
 
   const { isPlaying, progress, duration, track, artists, coverUrl, url } =
@@ -52,30 +60,53 @@ export function Player() {
 
   return (
     <PlayerWrapper>
-      <h2 className="text-lg font-semibold">
-        {isCurrentlyPlaying ? 'Currently Playing' : 'Last Played'}
-      </h2>
-      <div className="flex items-center gap-4">
-        <Cover coverUrl={coverUrl ?? recentlyPlayed.coverUrl} />
-        <div className="flex flex-grow flex-col justify-between gap-3">
-          <div className="flex items-center justify-between gap-4">
-            <Track
-              track={track ?? recentlyPlayed.track}
-              trackUrl={url ?? recentlyPlayed.url}
-              artists={artists ?? recentlyPlayed.artists}
-            />
-            {isCurrentlyPlaying ? (
-              <PlaybackControl isPlaying={isPlaying} />
-            ) : (
-              <p className="flex-shrink-0 text-xs text-muted-foreground">
-                {formatPlayedAt(recentlyPlayed.playedAt)}
-              </p>
-            )}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={isCurrentlyPlaying ? 'playing' : 'last-played'}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
+          <h2 className="mb-4 text-lg font-semibold">
+            {isCurrentlyPlaying ? 'Currently Playing' : 'Last Played'}
+          </h2>
+          <div className="flex items-center gap-4">
+            <Cover coverUrl={coverUrl ?? recentlyPlayed.coverUrl} />
+            <div className="flex flex-grow flex-col justify-between gap-3">
+              <div className="flex items-center justify-between gap-4">
+                <Track
+                  track={track ?? recentlyPlayed.track}
+                  trackUrl={url ?? recentlyPlayed.url}
+                  artists={artists ?? recentlyPlayed.artists}
+                />
+                {isCurrentlyPlaying ? (
+                  <PlaybackControl isPlaying={isPlaying} />
+                ) : (
+                  <motion.p
+                    className="flex-shrink-0 text-xs text-muted-foreground"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                  >
+                    {formatPlayedAt(recentlyPlayed.playedAt)}
+                  </motion.p>
+                )}
+              </div>
+              {isPlaying && (
+                <Progress progress={progress} duration={duration} />
+              )}
+            </div>
           </div>
-          {isPlaying && <Progress progress={progress} duration={duration} />}
-        </div>
-      </div>
-      <TopTracks />
+        </motion.div>
+      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+      >
+        <TopTracks />
+      </motion.div>
     </PlayerWrapper>
   );
 }

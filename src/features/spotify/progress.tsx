@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import { useEffect } from 'react';
 
 type ProgressProps = {
   progress: number;
@@ -6,15 +7,19 @@ type ProgressProps = {
 };
 
 export function Progress({ progress, duration }: ProgressProps) {
-  const percentage = (progress / duration) * 100;
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ width: `${(progress / duration) * 100}%` });
+  }, [progress, duration, controls]);
 
   return (
-    <div className="h-1 w-full max-w-[200px] overflow-hidden rounded-full bg-gray-500">
+    <div className="h-1 w-full max-w-[200px] overflow-hidden rounded-full bg-secondary">
       <motion.div
-        className="h-full rounded-full bg-[#1ED760]"
+        className="h-full rounded-full bg-primary"
         initial={{ width: 0 }}
-        animate={{ width: `${percentage}%` }}
-        transition={{ duration: 0.3 }}
+        animate={controls}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       />
     </div>
   );
