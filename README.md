@@ -22,7 +22,8 @@
 - ✨ [TypeScript](https://typescriptlang.org) — Statically typed superset of JavaScript for better error checking and maintainability.
 - 🎨 [Tailwind CSS 3](https://tailwindcss.com) — Utility-first CSS framework for creating custom designs quickly.
 - 💎 [Shadcn](https://ui.shadcn.com) — Collection of beautifully designed, customizable UI components.
-- 🎬 [Framer Motion](https://motion.dev) — Library for creating smooth, interactive animations in React.
+- 🎬 [Motion](https://motion.dev) — Library for creating smooth, interactive animations in React.
+- 🌴 [TanStack Query](https://tanstack.com/query/latest) — Powerful library for data fetching and asynchronous state management.
 - 🔍 [ESLint](https://eslint.org) — Tool for identifying and fixing code issues, with import sorting.
 - 💅 [Prettier](https://prettier.io) — Opinionated code formatter to maintain consistent style.
 - 🐶 [Husky & Lint Staged](https://typicode.github.io/husky) — Pre-commit hooks for running scripts on staged files.
