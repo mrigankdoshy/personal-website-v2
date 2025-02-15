@@ -4,6 +4,7 @@ import AppleWatch from 'public/images/apple-watch.jpg';
 import Bottega from 'public/images/bottega.jpg';
 import Copilot from 'public/images/copilot.jpg';
 import IOU from 'public/images/iou.jpg';
+import Rimowa from 'public/images/rimowa.png';
 import Robinhood from 'public/images/robinhood.png';
 import Warp from 'public/images/warp.png';
 
@@ -189,5 +190,12 @@ export const gear: Gear[] = [
       'Intrecciato leather card case, perfect for carrying upto 8 cards.',
     image: Bottega,
     link: 'https://bottegaveneta.com/en-us/flap-card-case-space-813351120.html',
+  },
+  {
+    name: 'RIMOWA - Aluminium Case',
+    category: 'Everyday Carry',
+    description: 'Beautiful groovy aluminium protective case for my phone.',
+    image: Rimowa,
+    link: 'https://www.rimowa.com/us/en/accessories/iphone-cases/iphones-pro/black-case-for-iphone-16-pro/95116013.html',
   },
 ];
