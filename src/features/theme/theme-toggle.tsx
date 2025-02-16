@@ -8,7 +8,13 @@ import { useTheme } from 'next-themes';
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    if (!document.startViewTransition) {
+      return setTheme(newTheme);
+    }
+    document.startViewTransition(() => setTheme(newTheme));
+  };
 
   return (
     <Button variant="ghost" size="icon" onClick={toggleTheme}>
