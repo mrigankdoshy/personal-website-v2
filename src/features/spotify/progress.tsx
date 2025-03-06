@@ -14,9 +14,9 @@ export function Progress({ progress, duration }: ProgressProps) {
   }, [progress, duration, controls]);
 
   return (
-    <div className="h-1 w-full max-w-[200px] overflow-hidden rounded-full bg-secondary">
+    <div className="bg-secondary h-1 w-full max-w-[200px] overflow-hidden rounded-full">
       <motion.div
-        className="h-full rounded-full bg-primary"
+        className="bg-primary h-full rounded-full"
         initial={{ width: 0 }}
         animate={controls}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}

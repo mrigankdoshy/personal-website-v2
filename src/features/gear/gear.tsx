@@ -9,7 +9,7 @@ export function Gear() {
     <BlurReveal className="flex flex-col gap-16 md:gap-24">
       <div className="flex flex-col gap-8">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-foreground text-3xl font-bold tracking-tight">
             <BlurRevealContent>Gear</BlurRevealContent>
           </h1>
           <p className="text-muted-foreground">
@@ -18,7 +18,7 @@ export function Gear() {
             </BlurRevealContent>
           </p>
         </div>
-        <p className="max-w-lg text-pretty text-muted-foreground">
+        <p className="text-muted-foreground max-w-lg text-pretty">
           <BlurRevealContent>
             A curated collection of apps, tools, and essentials I personally use
             and recommend to create, stay productive, and feel good about.

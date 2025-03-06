@@ -49,7 +49,7 @@ export function Navigation() {
               {pathname === link.path && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 -z-10 rounded-lg bg-accent"
+                  className="bg-accent absolute inset-0 -z-10 rounded-lg"
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 />
               )}

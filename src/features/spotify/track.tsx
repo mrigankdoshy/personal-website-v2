@@ -23,7 +23,7 @@ export function Track({
       {trackUrl ? (
         <Link
           href={trackUrl}
-          className="text-md line-clamp-1 font-bold transition-all duration-300 hover:text-primary hover:opacity-80"
+          className="text-md hover:text-primary line-clamp-1 font-bold transition-all duration-300 hover:opacity-80"
         >
           {track}
         </Link>
@@ -31,7 +31,7 @@ export function Track({
         <h2 className="text-md line-clamp-1 font-bold">{track}</h2>
       )}
       {artists && artists.length > 0 ? (
-        <div className="flex flex-wrap gap-1 text-sm text-muted-foreground">
+        <div className="text-muted-foreground flex flex-wrap gap-1 text-sm">
           {artists.map((artist, index) => (
             <p key={artist.url}>
               <Link href={artist.url} className="hover:underline">
@@ -42,7 +42,7 @@ export function Track({
           ))}
         </div>
       ) : (
-        <p className="line-clamp-1 text-sm text-muted-foreground">Spotify</p>
+        <p className="text-muted-foreground line-clamp-1 text-sm">Spotify</p>
       )}
     </motion.div>
   );

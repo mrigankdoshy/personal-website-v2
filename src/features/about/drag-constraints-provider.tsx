@@ -19,7 +19,7 @@ export function DragConstraintsProvider({
     <DragConstraintsContext.Provider
       value={constraintsRef as RefObject<HTMLDivElement>}
     >
-      <div ref={constraintsRef} className="flex flex-grow flex-col">
+      <div ref={constraintsRef} className="flex grow flex-col">
         {children}
       </div>
     </DragConstraintsContext.Provider>

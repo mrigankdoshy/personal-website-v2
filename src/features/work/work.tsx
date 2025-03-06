@@ -8,13 +8,13 @@ import { Section } from '@/shared/ui/section';
 import { Tag } from '@/shared/ui/tag';
 
 const linkClassName =
-  'transform no-underline transition duration-300 group-hover:opacity-50 hover:!opacity-100 hover:scale-[1.01] w-full border-none bg-transparent p-0 text-left focus:outline-none';
+  'transform no-underline transition duration-300 group-hover:opacity-50 hover:opacity-100! hover:scale-[1.01] w-full border-none bg-transparent p-0 text-left focus:outline-hidden';
 
 export function Work() {
   return (
     <div className="flex flex-col gap-16 md:gap-24">
       <BlurReveal>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+        <h1 className="text-foreground text-3xl font-bold tracking-tight">
           <BlurRevealContent>Work</BlurRevealContent>
         </h1>
         <p className="text-muted-foreground">
@@ -30,10 +30,10 @@ export function Work() {
               <Section heading={date} alignment="left">
                 <BlurReveal className="flex flex-col gap-6">
                   <div>
-                    <h2 className="text-xl font-bold tracking-tight text-foreground">
+                    <h2 className="text-foreground text-xl font-bold tracking-tight">
                       <BlurRevealContent>{role}</BlurRevealContent>
                     </h2>
-                    <h3 className="tracking-tight text-muted-foreground">
+                    <h3 className="text-muted-foreground tracking-tight">
                       <BlurRevealContent className="flex items-center gap-2">
                         <Link href={href}>{company}</Link>
                         {archived && (

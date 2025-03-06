@@ -59,7 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'flex min-h-screen flex-col bg-background font-sans antialiased',
+          'bg-background flex min-h-screen flex-col font-sans antialiased',
           fontSans.variable
         )}
       >
@@ -67,7 +67,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="dark">
             <DragConstraintsProvider>
               <Navigation />
-              <main className="mx-auto w-full max-w-[700px] flex-grow px-6 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
+              <main className="mx-auto w-full max-w-[700px] grow px-6 pt-16 pb-16 md:px-6 md:pt-20 md:pb-20">
                 {children}
               </main>
               <Footer />

@@ -7,7 +7,7 @@ export function PlayerSkeleton() {
       <Skeleton className="mb-4 h-7 w-40" />
       <div className="flex items-center gap-4">
         <Skeleton className="h-16 w-16 rounded-md" />
-        <div className="flex flex-grow flex-col justify-between gap-3">
+        <div className="flex grow flex-col justify-between gap-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex flex-col gap-2">
               <Skeleton className="h-5 w-32" />

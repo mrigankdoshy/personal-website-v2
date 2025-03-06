@@ -17,7 +17,7 @@ export function Section({ heading, alignment, children }: SectionProps) {
       >
         <h2
           className={cn(
-            'shrink-0 text-muted-foreground md:w-32',
+            'text-muted-foreground shrink-0 md:w-32',
             alignment === 'right' && 'md:text-right'
           )}
         >

@@ -10,7 +10,7 @@ export function GearItem({ name, description, image, link }: GearItemProps) {
       <a
         href={link}
         target="_blank"
-        className="bg-tertiary relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl border border-secondary"
+        className="bg-tertiary border-secondary relative aspect-square h-[4rem] w-[4rem] min-w-[4rem] overflow-hidden rounded-xl border"
       >
         <Image
           fill
@@ -21,10 +21,10 @@ export function GearItem({ name, description, image, link }: GearItemProps) {
       </a>
       <div className="flex grow items-center justify-between gap-2">
         <div className="space-y-1">
-          <h3 className="line-clamp-2 font-medium leading-tight text-primary">
+          <h3 className="text-primary line-clamp-2 leading-tight font-medium">
             {name}
           </h3>
-          <p className="line-clamp-3 text-sm leading-tight text-muted-foreground">
+          <p className="text-muted-foreground line-clamp-3 text-sm leading-tight">
             {description}
           </p>
         </div>

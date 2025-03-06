@@ -59,7 +59,7 @@ export function Picture({
     <motion.div
       drag
       dragConstraints={constraintsRef}
-      className="absolute mx-auto cursor-grab hover:before:absolute hover:before:-left-7 hover:before:-top-8 hover:before:block hover:before:h-[300px] hover:before:w-[calc(100%+55px)]"
+      className="absolute mx-auto cursor-grab hover:before:absolute hover:before:-top-8 hover:before:-left-7 hover:before:block hover:before:h-[300px] hover:before:w-[calc(100%+55px)]"
       style={{ rotate: `${rotate}deg`, left, width, height, perspective: 1000 }}
       animate={{ width, height, rotate, y: 0, opacity: 1, x: 0 }}
       whileTap={{ scale: 1.1, cursor: 'grabbing' }}
@@ -144,7 +144,7 @@ function BackSide({ filename, meta }: BackSideProps) {
     >
       <GlowEffect intensity={50} className="flex items-center">
         <span className="absolute h-[850px] w-[850px] bg-[url('/images/crystal-archive-paper.png')] bg-[length:280px] bg-repeat" />
-        <div className="z-[1] px-6">
+        <div className="z-1 px-6">
           <div
             className={cn(
               ticketingFont.className,
@@ -152,7 +152,7 @@ function BackSide({ filename, meta }: BackSideProps) {
             )}
           >
             <p className="text-muted-foreground">{filename}</p>
-            {meta && <p className="text-sm text-muted-foreground">{meta}</p>}
+            {meta && <p className="text-muted-foreground text-sm">{meta}</p>}
           </div>
         </div>
       </GlowEffect>

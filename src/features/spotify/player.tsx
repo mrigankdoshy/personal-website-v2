@@ -73,7 +73,7 @@ export function Player() {
           </h2>
           <div className="flex items-center gap-4">
             <Cover coverUrl={coverUrl ?? recentlyPlayed.coverUrl} />
-            <div className="flex flex-grow flex-col justify-between gap-3">
+            <div className="flex grow flex-col justify-between gap-3">
               <div className="flex items-center justify-between gap-4">
                 <Track
                   track={track ?? recentlyPlayed.track}
@@ -84,7 +84,7 @@ export function Player() {
                   <PlaybackControl isPlaying={isPlaying} />
                 ) : (
                   <motion.p
-                    className="flex-shrink-0 text-xs text-muted-foreground"
+                    className="text-muted-foreground shrink-0 text-xs"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.2 }}

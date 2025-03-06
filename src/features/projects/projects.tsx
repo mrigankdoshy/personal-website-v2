@@ -24,7 +24,7 @@ export function Projects() {
     <div className="flex flex-col gap-8 md:gap-16">
       <div className="flex flex-col gap-16 md:gap-24">
         <BlurReveal>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-foreground text-3xl font-bold tracking-tight">
             <BlurRevealContent>Things I&apos;ve built</BlurRevealContent>
           </h1>
           <p className="text-muted-foreground">

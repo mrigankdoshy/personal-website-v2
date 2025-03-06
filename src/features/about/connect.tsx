@@ -62,25 +62,25 @@ const connectLink: ConnectLink[] = [
 export function Connect() {
   return (
     <Section heading="Connect" alignment="left">
-      <ul className="animated-list grid flex-grow grid-cols-1 gap-3 md:grid-cols-2">
+      <ul className="animated-list grid grow grid-cols-1 gap-3 md:grid-cols-2">
         {connectLink.map(({ label, subtitle, icon, href }) => (
           <li key={label} className="col-span-1 transition-opacity">
             <Link
               href={href}
-              className="group inline-grid w-full transform rounded-lg bg-secondary p-4 text-foreground no-underline transition duration-200 hover:scale-[1.03]"
+              className="group bg-secondary text-foreground inline-grid w-full transform rounded-lg p-4 no-underline transition duration-200 hover:scale-[1.03]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{icon}</span>
                   <div className="flex flex-col">
                     <span className="text-sm">{label}</span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {subtitle}
                     </span>
                   </div>
                 </div>
                 <FontAwesomeIcon
-                  className="-rotate-45 transform transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="-rotate-45 transform transition duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   icon={faArrowRight}
                 />
               </div>

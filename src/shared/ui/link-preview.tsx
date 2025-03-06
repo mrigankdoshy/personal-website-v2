@@ -121,7 +121,7 @@ export function LinkPreview({
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
                     style={{ fontSize: 0 }}
-                    className="block rounded-lg border-2 border-border bg-card shadow transition-colors hover:border-muted dark:bg-card dark:hover:border-muted-foreground"
+                    className="border-border bg-card hover:border-muted dark:bg-card dark:hover:border-muted-foreground block rounded-lg border-2 shadow-sm transition-colors"
                     onClick={stopPropagation}
                   >
                     <Image

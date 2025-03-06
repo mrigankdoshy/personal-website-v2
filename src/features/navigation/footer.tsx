@@ -29,7 +29,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-[700px] items-center justify-between px-4 py-6 md:px-6">
         <div className="space-y-2 text-center md:text-left">
           <motion.p
-            className="text-xs text-muted-foreground"
+            className="text-muted-foreground text-xs"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -39,7 +39,7 @@ export function Footer() {
         </div>
         <Link href="https://github.com/mrigankdoshy/personal-website-v2">
           <motion.p
-            className="flex items-center gap-2 text-xs text-muted-foreground transition-colors duration-200 hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-xs transition-colors duration-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}

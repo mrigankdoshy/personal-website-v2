@@ -12,11 +12,11 @@ export async function Home() {
 
   return (
     <BlurReveal className="flex flex-col gap-4">
-      <p className="tracking-tight text-muted-foreground">
+      <p className="text-muted-foreground tracking-tight">
         <BlurRevealContent>Hey there, I&apos;m</BlurRevealContent>
       </p>
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-foreground text-3xl font-semibold tracking-tight">
           {headingWords.map((word, index) => (
             <Fragment key={index}>
               <BlurRevealContent>{word}</BlurRevealContent>
@@ -24,7 +24,7 @@ export async function Home() {
             </Fragment>
           ))}
         </h1>
-        <h2 className="inline-block text-2xl font-semibold tracking-tight text-secondary-foreground">
+        <h2 className="text-secondary-foreground inline-block text-2xl font-semibold tracking-tight">
           {subheadingWords.map((word, index) => (
             <Fragment key={index}>
               <BlurRevealContent>{word}</BlurRevealContent>
@@ -33,7 +33,7 @@ export async function Home() {
           ))}
         </h2>
       </div>
-      <span className="max-w-lg text-muted-foreground">
+      <span className="text-muted-foreground max-w-lg">
         <BlurRevealContent>
           I&apos;m a software engineer with a passion for developing (and
           occasionally designing) digital experiences. Currently, I&apos;m

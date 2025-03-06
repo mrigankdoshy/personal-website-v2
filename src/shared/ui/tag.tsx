@@ -17,7 +17,7 @@ export function Tag({ label, href }: TagProps) {
       href={href}
       className={cn(
         className,
-        'transform transition duration-300 hover:scale-105 hover:text-foreground'
+        'hover:text-foreground transform transition duration-300 hover:scale-105'
       )}
     >
       {label}
