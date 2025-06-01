@@ -57,7 +57,7 @@
     "eslint-config-next": "15.4.0-canary.51",
     "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^16.1.0",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.5.3",
     "prettier": "3.5.3",
