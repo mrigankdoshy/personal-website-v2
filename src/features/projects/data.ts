@@ -22,8 +22,16 @@ export const projects: Project[] = [
     description:
       'Browse over 100+ curated AI tools for business that will enable you to scale and create more revenue, reduce your costs, and optimize your content and customer engagement',
     url: 'https://github.com/mrigankdoshy/tools-for-business',
-    isPrivate: true,
     tags: ['Next.js', 'Supabase', 'Framer Motion'],
+  },
+  {
+    id: 'share-tab',
+    title: 'ShareTab',
+    description:
+      'A smart way to split bills with friends. Simply snap a photo of your receipt, and let AI handle the rest.',
+    url: 'https://github.com/mrigankdoshy/share-tab',
+    isPrivate: true,
+    tags: ['React Native', 'Expo', 'OpenAI'],
   },
   {
     id: 'personal-website-v1',
