@@ -15,7 +15,7 @@ import {
 } from 'motion/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { MouseEvent, ReactNode, useEffect, useState } from 'react';
+import { MouseEvent, ReactNode, useState } from 'react';
 
 type LinkPreviewProps = Readonly<{
   children: ReactNode;
@@ -38,7 +38,6 @@ export function LinkPreview({
 }: LinkPreviewProps) {
   const isExternal = !url.startsWith('/');
 
-  const [isMounted, setIsMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const x = useMotionValue(0);
@@ -63,25 +62,19 @@ export function LinkPreview({
     x.set(offsetFromCenter);
   };
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <>
-      {isMounted && (
-        <div className="hidden">
-          <Image
-            src={src}
-            width={width}
-            height={height}
-            quality={quality}
-            layout={layout}
-            priority
-            alt="hidden image for preloading"
-          />
-        </div>
-      )}
+      <div className="hidden">
+        <Image
+          src={src}
+          width={width}
+          height={height}
+          quality={quality}
+          layout={layout}
+          priority
+          alt="hidden image for preloading"
+        />
+      </div>
 
       <HoverCard
         open={isOpen}

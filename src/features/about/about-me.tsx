@@ -2,10 +2,20 @@ import { Greeting } from '@/features/about/greeting';
 import { BlurReveal, BlurRevealContent } from '@/shared/ui/blur-reveal';
 import { Link } from '@/shared/ui/link';
 import { Section } from '@/shared/ui/section';
-import { differenceInYears } from 'date-fns';
+import { differenceInYears, isBefore } from 'date-fns';
 
-const age = differenceInYears(new Date(), new Date(1999, 7, 12));
-const yearsOfExperience = new Date().getFullYear() - 2019;
+const today = new Date();
+const birthday = new Date(today.getFullYear(), 7, 12);
+
+const age =
+  differenceInYears(today, new Date(1999, 7, 12)) -
+  (isBefore(today, birthday) ? 1 : 0);
+
+const experienceStartYear = 2019;
+const yearsOfExperience =
+  today.getFullYear() -
+  experienceStartYear -
+  (isBefore(today, birthday) ? 1 : 0);
 
 export function AboutMe() {
   return (
