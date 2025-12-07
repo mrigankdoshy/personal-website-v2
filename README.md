@@ -17,10 +17,10 @@
 
 ## 👩🏻‍💻 Tech Stack
 
-- ⚡️ [Next.js 15 with App Router](https://nextjs.org) — React framework for building fast, scalable web apps with file-based routing.
+- ⚡️ [Next.js 16 with App Router](https://nextjs.org) — React framework for building fast, scalable web apps with file-based routing.
 - ⚛️ [React 19](https://react.dev) — Library for building declarative, component-based UIs.
 - ✨ [TypeScript](https://typescriptlang.org) — Statically typed superset of JavaScript for better error checking and maintainability.
-- 🎨 [Tailwind CSS 3](https://tailwindcss.com) — Utility-first CSS framework for creating custom designs quickly.
+- 🎨 [Tailwind CSS 4](https://tailwindcss.com) — Utility-first CSS framework for creating custom designs quickly.
 - 💎 [Shadcn](https://ui.shadcn.com) — Collection of beautifully designed, customizable UI components.
 - 🎬 [Motion](https://motion.dev) — Library for creating smooth, interactive animations in React.
 - 🌴 [TanStack Query](https://tanstack.com/query/latest) — Powerful library for data fetching and asynchronous state management.
