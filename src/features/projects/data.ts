@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       'A smart way to split bills with friends. Simply snap a photo of your receipt, and let AI handle the rest.',
     url: 'https://github.com/mrigankdoshy/share-tab',
-    isPrivate: true,
+    isPrivate: false,
     tags: ['React Native', 'Expo', 'OpenAI'],
   },
   {
