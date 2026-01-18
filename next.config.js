@@ -54,7 +54,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'rocketsim.app',
+        hostname: 'www.rocketsim.app',
       },
       {
         protocol: 'https',

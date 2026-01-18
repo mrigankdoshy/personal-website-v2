@@ -116,7 +116,8 @@ export const gear: Gear[] = [
     category: 'Apps',
     description:
       'Powerful Xcode Simulator tools such as network monitor, airplane mode, permission management and much more.',
-    image: 'https://rocketsim.app/Assets/rocketsim-app-icon.png',
+    image:
+      'https://www.rocketsim.app/_astro/rocketsim-app-icon.BIDtbpyG_Z137s7m.webp',
     link: 'https://rocketsim.app',
   },
   {
