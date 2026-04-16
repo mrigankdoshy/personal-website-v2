@@ -1,9 +1,9 @@
 import { Picture } from '@/shared/ui/picture';
 import Image, { StaticImageData } from 'next/image';
-import friends from 'public/images/friends.jpg';
-import goa from 'public/images/goa.jpg';
-import me from 'public/images/me.jpg';
-import pennState from 'public/images/penn-state.jpg';
+import friends from '~/images/friends.jpg';
+import goa from '~/images/goa.jpg';
+import me from '~/images/me.jpg';
+import pennState from '~/images/penn-state.jpg';
 import { CSSProperties } from 'react';
 
 type ImageProps = Readonly<{

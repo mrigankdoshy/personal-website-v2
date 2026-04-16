@@ -1,3 +1,5 @@
+/// <reference types="spotify-api" />
+
 export type Artist = {
   name: string;
   url: string;

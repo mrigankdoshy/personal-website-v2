@@ -1,12 +1,12 @@
 import { StaticImageData } from 'next/image';
-import AirPods from 'public/images/airpods.png';
-import AppleWatch from 'public/images/apple-watch.jpg';
-import Bottega from 'public/images/bottega.jpg';
-import Copilot from 'public/images/copilot.jpg';
-import IOU from 'public/images/iou.jpg';
-import Rimowa from 'public/images/rimowa.png';
-import Robinhood from 'public/images/robinhood.png';
-import Warp from 'public/images/warp.png';
+import AirPods from '~/images/airpods.png';
+import AppleWatch from '~/images/apple-watch.jpg';
+import Bottega from '~/images/bottega.jpg';
+import Copilot from '~/images/copilot.jpg';
+import IOU from '~/images/iou.jpg';
+import Rimowa from '~/images/rimowa.png';
+import Robinhood from '~/images/robinhood.png';
+import Warp from '~/images/warp.png';
 
 type Category = 'Apps' | 'Desk Setup' | 'Everyday Carry' | 'Other';
 
