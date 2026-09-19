@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+import { spotifyErrorResponse } from '@/features/spotify/route-error';
 import { getRecentlyPlayed } from '@/features/spotify/spotify';
 import { NextResponse } from 'next/server';
 
@@ -15,10 +15,6 @@ export async function GET() {
 
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Error in recently-played API route:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch recently playing data' },
-      { status: 500 }
-    );
+    return spotifyErrorResponse('recently-played', error);
   }
 }

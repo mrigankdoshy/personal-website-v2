@@ -10,16 +10,27 @@ export function Progress({ progress, duration }: ProgressProps) {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start({ width: `${(progress / duration) * 100}%` });
+    if (duration <= 0) {
+      return;
+    }
+
+    controls.set({ width: `${Math.min(progress / duration, 1) * 100}%` });
+
+    controls.start({
+      width: '100%',
+      transition: {
+        duration: Math.max(duration - progress, 0) / 1000,
+        ease: 'linear',
+      },
+    });
   }, [progress, duration, controls]);
 
   return (
-    <div className="bg-secondary h-1 w-full max-w-[200px] overflow-hidden rounded-full">
+    <div className="bg-secondary h-1 w-full max-w-50 overflow-hidden rounded-full">
       <motion.div
         className="bg-primary h-full rounded-full"
         initial={{ width: 0 }}
         animate={controls}
-        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       />
     </div>
   );

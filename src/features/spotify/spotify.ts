@@ -28,17 +28,22 @@ export const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
   'base64'
 );
 
-function getRefreshToken(): string {
-  if (typeof window !== 'undefined') {
-    return localStorage.getItem('spotifyRefreshToken') || '';
+export class SpotifyAuthError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'SpotifyAuthError';
   }
-  return REFRESH_TOKEN;
 }
 
-async function getAccessToken() {
-  const refreshToken = getRefreshToken();
-  if (!refreshToken) {
-    throw new Error('No refresh token available');
+let cachedToken: { value: string; expiresAt: number } | undefined;
+
+async function getAccessToken(): Promise<string> {
+  if (cachedToken !== undefined && Date.now() < cachedToken.expiresAt) {
+    return cachedToken.value;
+  }
+
+  if (!REFRESH_TOKEN) {
+    throw new SpotifyAuthError('SPOTIFY_REFRESH_TOKEN is not set');
   }
 
   const response = await fetch(TOKEN_ENDPOINT, {
@@ -49,12 +54,54 @@ async function getAccessToken() {
     },
     body: new URLSearchParams({
       grant_type: 'refresh_token',
-      refresh_token: refreshToken,
+      refresh_token: REFRESH_TOKEN,
     }),
+    cache: 'no-store',
   });
 
-  const { access_token } = await response.json();
-  return access_token;
+  const body = await response.json().catch(() => ({}));
+
+  if (!response.ok || typeof body.access_token !== 'string') {
+    const reason = body.error_description ?? body.error ?? 'unknown error';
+    throw new SpotifyAuthError(
+      `token refresh failed (${response.status}): ${reason}`
+    );
+  }
+
+  if (
+    typeof body.refresh_token === 'string' &&
+    body.refresh_token !== REFRESH_TOKEN
+  ) {
+    console.warn(
+      'Spotify returned a rotated refresh token — update SPOTIFY_REFRESH_TOKEN'
+    );
+  }
+
+  cachedToken = {
+    value: body.access_token,
+    // Expire early so an in-flight request can't race the real expiry.
+    expiresAt: Date.now() + Math.max((body.expires_in ?? 3600) - 60, 30) * 1000,
+  };
+
+  return cachedToken.value;
+}
+
+// revalidate is a shared server-side cache, so it — not the client poll rate —
+// bounds how hard we hit Spotify.
+async function spotifyFetch(
+  endpoint: string,
+  revalidate: number
+): Promise<Response> {
+  const token = await getAccessToken();
+
+  return fetch(endpoint, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    next: {
+      revalidate,
+    },
+  });
 }
 
 function formatTrackInfo({
@@ -63,7 +110,7 @@ function formatTrackInfo({
   is_playing,
   currently_playing_type,
 }: CurrentlyPlayingResponse): TrackInfo | undefined {
-  if (item === undefined || currently_playing_type !== 'track') {
+  if (!item || currently_playing_type !== 'track') {
     return undefined;
   }
 
@@ -84,53 +131,26 @@ function formatTrackInfo({
 }
 
 async function getCurrentTrack(): Promise<TrackInfo | undefined> {
-  try {
-    const token = await getAccessToken();
-    const response = await fetch(NOW_PLAYING_ENDPOINT, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      next: {
-        revalidate: 60,
-      },
-    });
+  const response = await spotifyFetch(NOW_PLAYING_ENDPOINT, 1);
 
-    if (response.status !== 200) {
-      console.log(`Spotify API returned status ${response.status}`);
-      return undefined;
-    }
-
-    const data: CurrentlyPlayingResponse = await response.json();
-    const formattedTrack = formatTrackInfo(data);
-
-    if (formattedTrack === undefined) {
-      console.log('No track data available or not currently playing a track');
-    }
-
-    return formattedTrack;
-  } catch (error) {
-    console.error('Error in getCurrentTrack:', error);
+  if (response.status === 204) {
     return undefined;
   }
+
+  if (!response.ok) {
+    console.log(`Spotify now-playing returned status ${response.status}`);
+    return undefined;
+  }
+
+  const data: CurrentlyPlayingResponse = await response.json();
+  return formatTrackInfo(data);
 }
 
 export async function getNowPlaying(): Promise<
   TrackInfo | { isPlaying: false }
 > {
-  try {
-    const track = await getCurrentTrack();
-
-    if (track === undefined) {
-      console.log('No track currently playing');
-      return { isPlaying: false };
-    }
-
-    return track;
-  } catch (error) {
-    console.error('Error in getNowPlaying:', error);
-    return { isPlaying: false };
-  }
+  const track = await getCurrentTrack();
+  return track ?? { isPlaying: false };
 }
 
 function formatRecentlyPlayed({
@@ -152,35 +172,15 @@ function formatRecentlyPlayed({
 export async function getRecentlyPlayed(): Promise<
   RecentlyPlayedTrack[] | undefined
 > {
-  try {
-    const token = await getAccessToken();
-    const response = await fetch(RECENTLY_PLAYED_ENDPOINT, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      next: {
-        revalidate: 60,
-      },
-    });
+  const response = await spotifyFetch(RECENTLY_PLAYED_ENDPOINT, 30);
 
-    if (response.status !== 200) {
-      console.log(`Spotify API returned status ${response.status}`);
-      return undefined;
-    }
-
-    const data: RecentlyPlayedResponse = await response.json();
-    const formattedTracks = data.items.map(formatRecentlyPlayed);
-
-    if (formattedTracks.length < 1) {
-      console.log('No recently played tracks');
-    }
-
-    return formattedTracks;
-  } catch (error) {
-    console.error('Error in getCurrentTrack:', error);
+  if (!response.ok) {
+    console.log(`Spotify recently-played returned status ${response.status}`);
     return undefined;
   }
+
+  const data: RecentlyPlayedResponse = await response.json();
+  return data.items.map(formatRecentlyPlayed);
 }
 
 function formatTopTrack(track: Track): TopTrack {
@@ -196,30 +196,13 @@ function formatTopTrack(track: Track): TopTrack {
 }
 
 export async function getTopTracks(): Promise<TopTrack[] | undefined> {
-  try {
-    const token = await getAccessToken();
-    const response = await fetch(TOP_TRACKS_ENDPOINT, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+  const response = await spotifyFetch(TOP_TRACKS_ENDPOINT, 3600);
 
-    if (response.status !== 200) {
-      console.log(`Spotify API returned status ${response.status}`);
-      return undefined;
-    }
-
-    const data: TopTrackResponse = await response.json();
-    const formattedTracks = data.items.map(formatTopTrack);
-
-    if (formattedTracks.length < 1) {
-      console.log('No recently played tracks');
-    }
-
-    return formattedTracks;
-  } catch (error) {
-    console.error('Error in getTopTracks:', error);
+  if (!response.ok) {
+    console.log(`Spotify top-tracks returned status ${response.status}`);
     return undefined;
   }
+
+  const data: TopTrackResponse = await response.json();
+  return data.items.map(formatTopTrack);
 }

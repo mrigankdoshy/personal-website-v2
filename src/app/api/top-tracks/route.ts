@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+import { spotifyErrorResponse } from '@/features/spotify/route-error';
 import { getTopTracks } from '@/features/spotify/spotify';
 import { NextResponse } from 'next/server';
 
@@ -15,10 +15,6 @@ export async function GET() {
 
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Error in top-tracks API route:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch top tracks data' },
-      { status: 500 }
-    );
+    return spotifyErrorResponse('top-tracks', error);
   }
 }

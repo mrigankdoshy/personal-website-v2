@@ -19,7 +19,7 @@ export function Work() {
         </h1>
         <p className="text-muted-foreground">
           <BlurRevealContent>
-            A glimpse into some places I&apos;ve shaped and grown with.
+            A glimpse into some places I’ve shaped and grown with.
           </BlurRevealContent>
         </p>
       </BlurReveal>

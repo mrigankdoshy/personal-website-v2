@@ -1,3 +1,4 @@
+import { fetchJson } from '@/features/spotify/fetch-json';
 import { RecentlyPlayedTrack, TrackInfo } from '@/features/spotify/types';
 import { useQuery } from '@tanstack/react-query';
 
@@ -11,13 +12,7 @@ type NowPlayingResponse =
 export function useNowPlaying() {
   return useQuery<NowPlayingResponse>({
     queryKey: ['now-playing'],
-    queryFn: async () => {
-      const response = await fetch('/api/now-playing');
-      if (!response.ok) {
-        throw new Error('Failed to fetch now playing data');
-      }
-      return response.json();
-    },
+    queryFn: () => fetchJson<NowPlayingResponse>('/api/now-playing'),
     refetchInterval: 1000,
   });
 }

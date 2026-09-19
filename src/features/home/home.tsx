@@ -13,7 +13,7 @@ export async function Home() {
   return (
     <BlurReveal className="flex flex-col gap-4">
       <p className="text-muted-foreground tracking-tight">
-        <BlurRevealContent>Hey there, I&apos;m</BlurRevealContent>
+        <BlurRevealContent>Hey there, I’m</BlurRevealContent>
       </p>
       <div className="space-y-2">
         <h1 className="text-foreground text-3xl font-semibold tracking-tight">
@@ -35,10 +35,10 @@ export async function Home() {
       </div>
       <span className="text-muted-foreground max-w-lg">
         <BlurRevealContent>
-          I&apos;m a software engineer with a passion for developing (and
-          occasionally designing) digital experiences. Currently, I&apos;m
-          focused on building sustainable and comprehensive machine health
-          centered products at{' '}
+          I’m a software engineer with a passion for developing (and
+          occasionally designing) digital experiences. Currently, I’m focused on
+          building sustainable and comprehensive machine health centered
+          products at{' '}
           <Link href="https://kcftech.com" underline enablePreview>
             KCF Technologies
           </Link>

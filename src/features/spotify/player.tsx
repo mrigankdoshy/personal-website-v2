@@ -35,18 +35,7 @@ export function Player() {
   }
 
   if (errorNowPlaying || errorRecentlyPlayed) {
-    return (
-      <PlayerWrapper>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="text-red-500"
-        >
-          Error: {((errorNowPlaying || errorRecentlyPlayed) as Error).message}
-        </motion.div>
-      </PlayerWrapper>
-    );
+    return null;
   }
 
   if (!nowPlaying || !recentlyPlayed) {

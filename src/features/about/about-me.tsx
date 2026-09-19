@@ -23,15 +23,15 @@ export function AboutMe() {
       <BlurReveal className="flex flex-col gap-6">
         <p>
           <BlurRevealContent>
-            <Greeting /> I&apos;m Mrigank Doshy!
+            <Greeting /> I’m Mrigank Doshy!
           </BlurRevealContent>
         </p>
         <p>
           <BlurRevealContent>
             My curiosity for software began when I was really young, and now at{' '}
             {age}, that curiosity continues to fuel my journey in tech. Over the
-            past {yearsOfExperience} years, I&apos;ve been designing and
-            building software for startups, established businesses, and personal
+            past {yearsOfExperience} years, I’ve been designing and building
+            software for startups, established businesses, and personal
             projects, continually honing my skills along the way.
           </BlurRevealContent>
         </p>
@@ -70,8 +70,8 @@ export function AboutMe() {
         </span>
         <p>
           <BlurRevealContent>
-            Since then, I&apos;ve focused on crafting sustainable, impactful
-            software solutions. From exploring blockchain in FinTech to creating
+            Since then, I’ve focused on crafting sustainable, impactful software
+            solutions. From exploring blockchain in FinTech to creating
             intuitive web and mobile applications, I approach each project with
             a design-first mindset.
           </BlurRevealContent>
@@ -79,11 +79,11 @@ export function AboutMe() {
         <p>
           <BlurRevealContent>
             I tend to approach life with a logical, analytical, and scientific
-            mindset, always asking &apos;why&apos; to uncover the reasons behind
-            things. My love for physics drives this curiosity, especially when
-            tackling unusual and complex problems. When I&apos;m not immersed in
-            technology, you can find me playing musical instruments or
-            binge-watching movies and shows.
+            mindset, always asking ’why’ to uncover the reasons behind things.
+            My love for physics drives this curiosity, especially when tackling
+            unusual and complex problems. When I’m not immersed in technology,
+            you can find me playing musical instruments or binge-watching movies
+            and shows.
           </BlurRevealContent>
         </p>
       </BlurReveal>

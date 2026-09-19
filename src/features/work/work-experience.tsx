@@ -25,7 +25,7 @@ export const workExperiences: WorkExperience[] = [
       <>
         <BlurRevealContent>
           I currently lead the development of a new cross-platform mobile app
-          for KCF&apos;s{' '}
+          for KCF’s{' '}
           <Link
             href="https://kcftech.com/solutions/smartdiagnostics/"
             underline
@@ -89,7 +89,7 @@ export const workExperiences: WorkExperience[] = [
           project
         </Link>{' '}
         helped reduce manual effort and enhanced productivity, leading to its
-        adoption by Volvo&apos;s internal teams.
+        adoption by Volvo’s internal teams.
       </BlurRevealContent>
     ),
     tags: [
@@ -111,7 +111,7 @@ export const workExperiences: WorkExperience[] = [
       <>
         <BlurRevealContent>
           Built and launched a peer-to-peer delivery platform, that empowered
-          students to be one another&apos;s service providers while efficiently
+          students to be one another’s service providers while efficiently
           managing their time. I designed the UI/UX, developed the{' '}
           <Link
             href="https://apps.apple.com/us/app/mule-delivery/id1554136114"
